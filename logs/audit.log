@@ -1,0 +1,1061 @@
+2026-02-24 16:36:17,230 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 16:36:17,922 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 16:42:27,866 - FeedbackAnalyzer - ERROR - [DB_ERR] ERROR: An error occurred (ResourceNotFoundException) when calling the PutItem operation: Requested resource not found
+2026-02-24 16:48:01,620 - FeedbackAnalyzer - INFO - [SANITIZER_START] DEBUG: Original text head:    Hello &amp; Welcome!! 
+
+  ...
+2026-02-24 16:48:01,620 - FeedbackAnalyzer - INFO - [SANITIZER_END] SUCCESS: Cleaned text head: Hello &amp; Welcome!!...
+2026-02-24 16:48:01,837 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 16:48:02,564 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 16:48:51,800 - FeedbackAnalyzer - INFO - [SANITIZER_START] DEBUG: Original text head:    Hello &amp; Welcome!! 
+
+  ...
+2026-02-24 16:48:51,800 - FeedbackAnalyzer - INFO - [SANITIZER_END] SUCCESS: Cleaned text head: Hello &amp; Welcome!!...
+2026-02-24 16:48:52,016 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 16:48:52,662 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 16:50:16,955 - FeedbackAnalyzer - INFO - [SANITIZER_START] DEBUG: Original text head:    Hello &amp; Welcome!! 
+
+  ...
+2026-02-24 16:50:16,956 - FeedbackAnalyzer - INFO - [SANITIZER_END] SUCCESS: Cleaned text head: Hello &amp; Welcome!!...
+2026-02-24 16:50:17,166 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 16:50:17,801 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 16:50:18,052 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I am very disappointed with the delay, but the pro
+2026-02-24 16:50:19,173 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 53f531c1-800b-4bbc-9356-1ccf404159e8
+2026-02-24 17:04:39,368 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Hello & Welcome!!...
+2026-02-24 17:04:39,574 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 17:04:40,239 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:04:40,493 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I am very disappointed with the delay, but the pro
+2026-02-24 17:04:41,623 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 3909ed47-4ab8-4564-aea6-65da2982a655
+2026-02-24 17:05:43,052 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Hello & Welcome!!...
+2026-02-24 17:05:43,270 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 17:05:43,937 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:05:44,180 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I am very disappointed with the delay, but the pro
+2026-02-24 17:05:45,270 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: ce927952-8ff0-4042-b5fb-5a0ccec7a249
+2026-02-24 17:08:59,646 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Hello & Welcome!!...
+2026-02-24 17:08:59,875 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: El servicio al cliente fue fantástico.
+2026-02-24 17:09:00,563 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:09:00,824 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I am very disappointed with the delay, but the pro
+2026-02-24 17:09:01,978 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 7b314c3d-0fde-4eb0-a983-ee1078d257fc
+2026-02-24 17:36:09,340 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:36:09,343 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Hola! Mi nombre es Edwin y mi correo es ...
+2026-02-24 17:36:09,343 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:36:09,345 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Hola! Mi nombre es Edwin y mi ...
+2026-02-24 17:36:09,346 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Hola! Mi nombre es Edwin y mi correo es [MASKED_EM
+2026-02-24 17:36:10,140 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:36:10,141 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hello! My name is Edwin and my email is [MASKED_EM
+2026-02-24 17:36:10,623 - FeedbackAnalyzer - ERROR - [DB_ERR] ERROR: Float types are not supported. Use Decimal types instead.
+2026-02-24 17:36:10,623 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 17:39:23,858 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:39:23,861 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '¡Hola! Mi nombre es Edwin y mi correo es...
+2026-02-24 17:39:23,862 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:39:23,862 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: ¡Hola! Mi nombre es Edwin y mi...
+2026-02-24 17:39:23,862 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: ¡Hola! Mi nombre es Edwin y mi correo es [MASKED_E
+2026-02-24 17:39:24,569 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:39:24,569 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hello! My name is Edwin and my email is [MASKED_EM
+2026-02-24 17:39:25,327 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 17:44:35,313 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:44:35,313 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 17:44:35,313 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:44:35,313 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 17:44:35,314 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 17:44:35,797 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:44:35,797 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 17:44:36,523 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 17:47:55,707 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:47:55,708 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 17:47:55,708 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:47:55,711 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 17:47:55,712 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 17:47:56,413 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:47:56,414 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 17:47:57,110 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: f9df3a90-5e52-42e4-8c96-019d33bd81bf
+2026-02-24 17:47:57,110 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 17:50:55,812 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:50:55,812 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 17:50:55,812 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:50:55,812 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 17:50:55,813 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 17:50:56,514 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:50:56,514 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 17:50:57,213 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: fc2dd276-92d1-48e6-87ba-145e360a5105
+2026-02-24 17:50:57,213 - FeedbackAnalyzer - ERROR - [DB_ERR] ERROR: 'DynamoDBStorage' object has no attribute 'table_name'
+2026-02-24 17:50:57,213 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 17:55:02,249 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:55:02,250 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 17:55:02,251 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:55:02,251 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 17:55:02,251 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 17:55:02,900 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:55:02,901 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 17:55:03,635 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: c6317f52-f352-4a04-b7a1-571cd85d1bdf
+2026-02-24 17:55:03,635 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 17:58:44,005 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 17:58:44,008 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 17:58:44,008 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 17:58:44,008 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 17:58:44,008 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 17:58:44,638 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 17:58:44,639 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 17:58:45,346 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 18:00:46,143 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:00:46,144 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 18:00:46,145 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:00:46,145 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 18:00:46,148 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 18:00:46,791 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:00:46,791 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 18:00:47,548 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 5772ab66-18ae-4de5-989b-be7f161c2e6e
+2026-02-24 18:00:47,548 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 18:02:01,333 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:02:01,333 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 18:02:01,333 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:02:01,333 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 18:02:01,334 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 18:02:02,009 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:02:02,009 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 18:02:02,702 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 8d782a7e-ce2a-480a-81b3-e8e3883a7c40
+2026-02-24 18:02:02,702 - FeedbackAnalyzer - INFO - [PIPELINE_END] SUCCESS: Feedback processed and saved
+2026-02-24 18:12:27,560 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:12:27,562 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 18:12:27,564 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:12:27,565 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 18:12:27,574 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, je m'appelle Edwin. Mon email est [MASKED
+2026-02-24 18:12:28,219 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:12:28,219 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, my name is Edwin. My email is [MASKED_EMAIL]. 
+2026-02-24 18:12:28,933 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: e9134d98-f85e-4d5a-adf5-bf7b32cd1260
+2026-02-24 18:12:28,934 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Feedback processed and saved
+2026-02-24 18:21:44,795 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:21:44,797 - FeedbackAnalyzer - ERROR - [PIPELINE_ERROR] ERROR: 'FeedbackAnalysisPipeline' object has no attribute 'ingestion'
+2026-02-24 18:22:40,848 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:22:40,848 - FeedbackAnalyzer - ERROR - [PIPELINE_ERROR] ERROR: 'WebIngestor' object has no attribute 'map'
+2026-02-24 18:23:55,330 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:23:55,331 - FeedbackAnalyzer - ERROR - [PIPELINE_ERROR] ERROR: 'WebIngestor' object has no attribute 'map'
+2026-02-24 18:26:21,156 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:26:21,156 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, je m'appelle Edwin. Mon email e...
+2026-02-24 18:26:21,156 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:26:21,157 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, je m'appelle Edwin. M...
+2026-02-24 18:26:21,157 - FeedbackAnalyzer - ERROR - [PIPELINE_ERROR] ERROR: 'SimpleDataProtector' object has no attribute 'mask_pii'
+2026-02-24 18:28:27,968 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:28:27,969 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, c'est Edwin. Mon email est edwi...
+2026-02-24 18:28:27,970 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:28:27,973 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, c'est Edwin. Mon emai...
+2026-02-24 18:28:27,973 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, c'est Edwin. Mon email est [MASKED_EMAIL]
+2026-02-24 18:28:28,707 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:28:28,709 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, it's Edwin. My email is [MASKED_EMAIL]. The se
+2026-02-24 18:28:29,439 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 053d845e-206e-480c-85a6-a36118617ae8
+2026-02-24 18:28:29,439 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Feedback processed and saved
+2026-02-24 18:29:57,278 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:29:57,280 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, c'est Edwin. Mon email est edwi...
+2026-02-24 18:29:57,281 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:29:57,281 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, c'est Edwin. Mon emai...
+2026-02-24 18:29:57,282 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, c'est Edwin. Mon email est edwin@example.
+2026-02-24 18:29:57,979 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:29:57,979 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, it's Edwin. My email is edwin@example.com. The
+2026-02-24 18:29:58,770 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 34aaf77e-100b-4a57-93b8-48a913638275
+2026-02-24 18:29:58,771 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Feedback processed and saved
+2026-02-24 18:31:36,773 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:32:08,259 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "Bonjour, c'est Edwin. Mon email est edwi...
+2026-02-24 18:32:08,260 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:32:08,260 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, c'est Edwin. Mon emai...
+2026-02-24 18:32:08,261 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, c'est Edwin. Mon email est edwin@example.
+2026-02-24 18:32:08,933 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:32:08,933 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, it's Edwin. My email is edwin@example.com. The
+2026-02-24 18:32:09,662 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 35968305-32cc-44e2-8262-6ea9368afd4a
+2026-02-24 18:32:09,663 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Feedback processed and saved
+2026-02-24 18:32:43,437 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:32:43,438 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Bonjour, c\'est Edwin. Mon email est edw...
+2026-02-24 18:32:43,439 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:32:43,440 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, c'est Edwin. Mon emai...
+2026-02-24 18:32:43,442 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, c'est Edwin. Mon email est edwin@example.
+2026-02-24 18:32:44,088 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:32:44,088 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, it's Edwin. My email is edwin@example.com. The
+2026-02-24 18:32:44,809 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: 1aa6803d-b05a-4b1a-9b10-74db2517ca36
+2026-02-24 18:32:44,809 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Feedback processed and saved
+2026-02-24 18:36:20,528 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 18:36:20,528 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Bonjour, c\'est Edwin. Mon email est edw...
+2026-02-24 18:36:20,529 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 18:36:20,529 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Bonjour, c'est Edwin. Mon emai...
+2026-02-24 18:36:20,530 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Bonjour, c'est Edwin. Mon email est edwin@example.
+2026-02-24 18:36:21,189 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 18:36:21,189 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Hi, it's Edwin. My email is edwin@example.com. The
+2026-02-24 18:36:21,885 - FeedbackAnalyzer - INFO - [DB_SAVE] SUCCESS: ID: b10345ca-eff2-4b40-93e5-b06de8124418
+2026-02-24 18:36:21,886 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Feedback processed and saved
+2026-02-24 20:45:18,007 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 20:46:33,368 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 20:46:33,369 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Le service était incroyable ! Jean-Pierr...
+2026-02-24 20:46:33,369 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 20:46:33,369 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Le service était incroyable ! ...
+2026-02-24 20:46:33,370 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Le service était incroyable ! Jean-Pierre nous a b
+2026-02-24 20:46:34,094 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 20:46:34,094 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: The service was amazing! Jean-Pierre helped us a l
+2026-02-24 20:46:34,586 - FeedbackAnalyzer - ERROR - [PIPELINE_ERROR] ERROR: 'dict' object has no attribute 'to_dict'
+2026-02-24 20:47:04,359 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 20:47:11,271 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:34:37,410 - FeedbackAnalyzer - INFO - [PIPELINE_START] INFO: Processing new feedback entry
+2026-02-24 22:34:37,411 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '"Le service était incroyable ! Jean-Pier...
+2026-02-24 22:34:37,412 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 22:34:37,413 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: "Le service était incroyable !...
+2026-02-24 22:34:37,415 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: "Le service était incroyable ! Jean-Pierre nous a 
+2026-02-24 22:34:38,126 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 22:34:38,127 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: “The service was amazing! Jean-Pierre helped us a 
+2026-02-24 22:34:38,589 - FeedbackAnalyzer - ERROR - [PIPELINE_ERROR] ERROR: 'dict' object has no attribute 'to_dict'
+2026-02-24 22:41:14,437 - FeedbackAnalyzer - INFO - [AUTH_LOGIN_FAIL] WARN: Invalid password for admin_edwin.
+2026-02-24 22:41:28,579 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 22:41:49,887 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Le service était incroyable ! Jean-Pierr...
+2026-02-24 22:41:49,888 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 22:41:49,888 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Le service était incroyable ! ...
+2026-02-24 22:41:49,889 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Le service était incroyable ! Jean-Pierre nous a b
+2026-02-24 22:41:50,574 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 22:41:50,574 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: The service was amazing! Jean-Pierre helped us a l
+2026-02-24 22:41:51,294 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: e9739443-416c-4fcf-911e-1dee8a8c3474
+2026-02-24 22:41:51,294 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record e9739443-416c-4fcf-911e-1dee8a8c3474
+2026-02-24 22:42:16,099 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 1 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:42:30,325 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 1 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:42:49,899 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Je suis très déçu. J\'ai envoyé un mail ...
+2026-02-24 22:42:49,900 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 22:42:49,900 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Je suis très déçu. J'ai envoyé...
+2026-02-24 22:42:49,900 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Je suis très déçu. J'ai envoyé un mail à support@e
+2026-02-24 22:42:50,709 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 22:42:50,710 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I am very disappointed. I sent an email to support
+2026-02-24 22:42:51,467 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: 5a7e2f0d-1d55-491e-ba9c-ab1ac9e312eb
+2026-02-24 22:42:51,467 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record 5a7e2f0d-1d55-491e-ba9c-ab1ac9e312eb
+2026-02-24 22:43:05,107 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:43:17,057 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:44:53,965 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 22:45:05,789 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:55:27,615 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 22:55:58,719 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "e suis très déçu. J'ai envoyé un mail à ...
+2026-02-24 22:55:58,720 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 22:55:58,720 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: e suis très déçu. J'ai envoyé ...
+2026-02-24 22:55:58,720 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: e suis très déçu. J'ai envoyé un mail à support@en
+2026-02-24 22:55:59,464 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 22:55:59,464 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I am very disappointed. I sent an email to support
+2026-02-24 22:56:00,207 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: c1a27933-aee3-4b34-b3ee-bd5be934ff8b
+2026-02-24 22:56:00,207 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record c1a27933-aee3-4b34-b3ee-bd5be934ff8b
+2026-02-24 22:56:06,502 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 3 records for user 0c0b005f-5ceb-4e40-86e4-7ef62c45c539
+2026-02-24 22:56:12,680 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 21 total records
+2026-02-24 22:56:12,680 - FeedbackAnalyzer - ERROR - [DB_SCAN_ERR] ERROR: FeedbackModel.__init__() got an unexpected keyword argument 'scores'
+2026-02-24 22:59:50,676 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:00:25,309 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "La commande est arrivée à l'heure à Pari...
+2026-02-24 23:00:25,309 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 23:00:25,310 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: La commande est arrivée à l'he...
+2026-02-24 23:00:25,310 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: La commande est arrivée à l'heure à Paris. Le coli
+2026-02-24 23:00:26,046 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 23:00:26,046 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: The order arrived on time in Paris. The package wa
+2026-02-24 23:00:26,827 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: 5e7a155b-4abd-40e3-9711-68ba39eb270e
+2026-02-24 23:00:26,828 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record 5e7a155b-4abd-40e3-9711-68ba39eb270e
+2026-02-24 23:00:33,468 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:00:38,706 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:00:38,707 - FeedbackAnalyzer - ERROR - [DB_SCAN_ERR] ERROR: FeedbackModel.__init__() got an unexpected keyword argument 'scores'
+2026-02-24 23:00:47,879 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:00:49,066 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:00:49,066 - FeedbackAnalyzer - ERROR - [DB_SCAN_ERR] ERROR: FeedbackModel.__init__() got an unexpected keyword argument 'scores'
+2026-02-24 23:03:44,032 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:03:48,155 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:03:51,889 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:03:51,890 - FeedbackAnalyzer - ERROR - [DB_SCAN_ERR] ERROR: FeedbackModel.__init__() missing 1 required positional argument: 'user_id'
+2026-02-24 23:05:25,489 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:05:31,275 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:05:35,196 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:07:26,195 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:07:31,347 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:07:36,756 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:10:10,435 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:10:13,788 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:10:16,746 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:13:27,058 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:13:29,964 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:13:31,514 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 22 total records
+2026-02-24 23:47:02,204 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:47:41,797 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Le service était incroyable ! Jean-Pierr...
+2026-02-24 23:47:41,799 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 23:47:41,799 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Le service était incroyable ! ...
+2026-02-24 23:47:41,800 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Le service était incroyable ! Jean-Pierre nous a b
+2026-02-24 23:47:42,501 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 23:47:42,501 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: The service was amazing! Jean-Pierre helped us a l
+2026-02-24 23:47:43,224 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: cc5c6396-9275-4e43-9387-6ea27dbc847a
+2026-02-24 23:47:43,224 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record cc5c6396-9275-4e43-9387-6ea27dbc847a
+2026-02-24 23:48:17,699 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '"Je suis très déçu. J\'ai envoyé un mail...
+2026-02-24 23:48:17,700 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 23:48:17,700 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: "Je suis très déçu. J'ai envoy...
+2026-02-24 23:48:17,701 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: "Je suis très déçu. J'ai envoyé un mail à support@
+2026-02-24 23:48:18,375 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 23:48:18,375 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: “I am very disappointed. I sent an email to suppor
+2026-02-24 23:48:19,052 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: a3bc3d4d-6314-41dc-b4d4-0bd23c34e903
+2026-02-24 23:48:19,052 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record a3bc3d4d-6314-41dc-b4d4-0bd23c34e903
+2026-02-24 23:48:41,853 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': "La commande est arrivée à l'heure à Pari...
+2026-02-24 23:48:41,853 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 23:48:41,853 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: La commande est arrivée à l'he...
+2026-02-24 23:48:41,857 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: La commande est arrivée à l'heure à Paris. Le coli
+2026-02-24 23:48:42,487 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 23:48:42,487 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: The order arrived on time in Paris. The package wa
+2026-02-24 23:48:43,182 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: 93d62afb-11cc-4b7f-9693-f35bbd97e070
+2026-02-24 23:48:43,182 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record 93d62afb-11cc-4b7f-9693-f35bbd97e070
+2026-02-24 23:48:48,132 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:48:51,450 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 3 total records
+2026-02-24 23:49:05,451 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:49:06,810 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 3 total records
+2026-02-24 23:49:42,334 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:49:53,712 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 3 total records
+2026-02-24 23:50:11,528 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:56:50,504 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-24 23:56:55,551 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin_edwin
+2026-02-24 23:57:01,100 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 3 total records
+2026-02-24 23:57:39,088 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'I loved it!', 'user_id': 'admin_edwin'}...
+2026-02-24 23:57:39,089 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 23:57:39,089 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: I loved it!...
+2026-02-24 23:57:39,089 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: I loved it!
+2026-02-24 23:57:39,757 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 23:57:39,758 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: I loved it!
+2026-02-24 23:57:40,558 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: f111a2aa-b3fe-405d-8d0b-b244bd7ad0a0
+2026-02-24 23:57:40,559 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record f111a2aa-b3fe-405d-8d0b-b244bd7ad0a0
+2026-02-24 23:57:51,064 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 1 records for user admin_edwin
+2026-02-24 23:57:56,571 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 4 total records
+2026-02-24 23:58:19,493 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'The worst place ever!', 'user_id': 'admi...
+2026-02-24 23:58:19,494 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-24 23:58:19,494 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: The worst place ever!...
+2026-02-24 23:58:19,495 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: The worst place ever!
+2026-02-24 23:58:20,124 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-24 23:58:20,124 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: The worst place ever!
+2026-02-24 23:58:20,910 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: bd3172a1-105a-46fd-b79e-a41e06ca47b7
+2026-02-24 23:58:20,910 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record bd3172a1-105a-46fd-b79e-a41e06ca47b7
+2026-02-24 23:58:26,658 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user admin_edwin
+2026-02-24 23:58:34,185 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 5 total records
+2026-02-24 23:58:42,198 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user admin_edwin
+2026-02-24 23:58:49,544 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user admin_edwin
+2026-02-25 07:10:39,090 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 2 records for user admin_edwin
+2026-02-25 07:10:41,406 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 5 total records
+2026-02-25 07:11:08,190 - FeedbackAnalyzer - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': 'Great food. I love this restaurant!', 'u...
+2026-02-25 07:11:08,190 - FeedbackAnalyzer - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-25 07:11:08,190 - FeedbackAnalyzer - INFO - [SANITIZER] SUCCESS: Cleaned: Great food. I love this restau...
+2026-02-25 07:11:08,190 - FeedbackAnalyzer - INFO - [AWS_TRANS] DEBUG: Sending: Great food. I love this restaurant!
+2026-02-25 07:11:08,879 - FeedbackAnalyzer - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-02-25 07:11:08,879 - FeedbackAnalyzer - INFO - [AWS_COMP] DEBUG: Analyzing: Great food. I love this restaurant!
+2026-02-25 07:11:09,750 - FeedbackAnalyzer - INFO - [FEEDBACK_SAVE] SUCCESS: ID: 77acbeb1-5b72-43f2-968e-e6e4cc5b0518
+2026-02-25 07:11:09,751 - FeedbackAnalyzer - INFO - [PIPELINE_END] INFO: Saved record 77acbeb1-5b72-43f2-968e-e6e4cc5b0518
+2026-02-25 07:11:16,604 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 3 records for user admin_edwin
+2026-02-25 07:11:20,444 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:13:34,163 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 07:13:38,426 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 3 records for user admin_edwin
+2026-02-25 07:13:45,212 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:15:44,042 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 07:15:49,830 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 3 records for user admin_edwin
+2026-02-25 07:15:51,141 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:16:06,602 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:16:17,260 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:17:10,115 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:20:01,791 - FeedbackAnalyzer - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 07:20:08,333 - FeedbackAnalyzer - INFO - [DB_QUERY] SUCCESS: Found 3 records for user admin_edwin
+2026-02-25 07:20:16,697 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 07:20:24,173 - FeedbackAnalyzer - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-25 10:24:48,469 - FeedbackAnalyzer - INFO - [DEPLOYMENT_START] INFO: Bucket: comp264-edwin-1772030214
+2026-02-25 10:24:48,469 - FeedbackAnalyzer - INFO - [INFRA_PHASE] INFO: Provisioning DynamoDB tables...
+2026-02-25 10:24:49,239 - FeedbackAnalyzer - INFO - [WORKER_PHASE] INFO: Deploying LabelWorker Lambda...
+2026-02-25 10:24:50,860 - FeedbackAnalyzer - INFO - [WIRING_PHASE] INFO: Syncing S3 trigger configurations...
+2026-02-25 10:24:51,629 - FeedbackAnalyzer - INFO - [TEST_PHASE] INFO: Starting integration test upload...
+2026-02-25 10:25:01,630 - FeedbackAnalyzer - INFO - [DEPLOYMENT_COMPLETE] INFO: All systems operational.
+2026-02-25 12:20:09,417 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:20:22,394 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 12:20:50,997 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:21:06,012 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 12:21:33,204 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:21:48,140 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 12:28:49,516 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:32:55,579 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:38:58,149 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:42:21,951 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:44:52,041 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:48:10,898 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:49:50,183 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:49:53,309 - SystemManager - INFO - [WIRING_COMPLETE] INFO: Successfully wired 1 workers to comp264-edwin-1772030214
+2026-02-25 12:50:05,124 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 12:53:31,132 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:53:36,901 - SystemManager - INFO - [WIRING_COMPLETE] INFO: Successfully wired 2 workers to comp264-edwin-1772030214
+2026-02-25 12:53:49,369 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 12:57:23,190 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 12:57:28,563 - SystemManager - INFO - [WIRING_COMPLETE] INFO: Successfully wired 2 workers to comp264-edwin-1772030214
+2026-02-25 12:57:40,744 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 12:57:41,134 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 12:57:41,336 - ResultsChecker - WARNING - [DB_EMPTY] WARNING: No data found in table.
+2026-02-25 13:02:43,549 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 13:03:35,164 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 13:03:41,433 - SystemManager - INFO - [WIRING_COMPLETE] INFO: Successfully wired 2 workers to comp264-edwin-1772030214
+2026-02-25 13:03:53,511 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 13:03:53,914 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 13:03:54,089 - ResultsChecker - WARNING - [DB_EMPTY] WARNING: No data found in table.
+2026-02-25 13:08:25,457 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 13:08:31,300 - SystemManager - INFO - [WIRING_COMPLETE] INFO: Successfully wired 2 workers to comp264-edwin-1772030214
+2026-02-25 13:08:43,081 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 13:08:43,514 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 13:08:43,706 - ResultsChecker - WARNING - [DB_EMPTY] WARNING: No data found in table.
+2026-02-25 13:10:28,840 - TableManager - INFO - [TABLE_CHECK] INFO: Verifying DynamoDB tables...
+2026-02-25 13:10:34,704 - SystemManager - INFO - [WIRING_COMPLETE] INFO: Successfully wired 2 workers to comp264-edwin-1772030214
+2026-02-25 13:10:46,615 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 13:10:47,010 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 13:27:24,775 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 13:30:21,294 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 13:31:02,693 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 13:31:05,088 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 13:31:05,268 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 13:31:05,449 - ResultsChecker - WARNING - [DB_EMPTY] WARNING: No data found in table.
+2026-02-25 13:39:07,928 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 13:39:37,928 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 13:39:38,329 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 13:39:38,515 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 14:03:39,182 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 14:04:09,115 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 14:04:09,504 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 14:04:09,689 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 16:05:57,505 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:07:20,930 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:07:21,913 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 16:14:02,405 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:14:03,347 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 16:16:02,289 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:16:03,306 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 16:17:32,162 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:17:33,091 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 16:17:36,038 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying OCRWorker...
+2026-02-25 16:17:38,631 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying TranslateWorker...
+2026-02-25 16:17:41,196 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SpeechWorker...
+2026-02-25 16:20:26,150 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:20:27,105 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 16:20:30,051 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying OCRWorker...
+2026-02-25 16:20:32,579 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying TranslateWorker...
+2026-02-25 16:20:37,305 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SpeechWorker...
+2026-02-25 16:20:47,922 - TableManager - WARNING - [STREAM_NOT_FOUND] WARNING: No stream enabled for Analysis_Translations
+2026-02-25 16:21:05,246 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 16:21:05,605 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 16:21:05,784 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 16:25:05,694 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 16:25:06,649 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 16:25:11,900 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying OCRWorker...
+2026-02-25 16:25:14,483 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying TranslateWorker...
+2026-02-25 16:25:19,227 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SpeechWorker...
+2026-02-25 16:25:47,773 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 16:25:48,134 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 16:25:48,315 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 17:06:44,567 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 17:06:45,767 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 17:06:48,798 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying OCRWorker...
+2026-02-25 17:06:53,617 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying TranslateWorker...
+2026-02-25 17:06:56,207 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SpeechWorker...
+2026-02-25 17:07:01,350 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SummaryWorker...
+2026-02-25 17:07:28,931 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 17:07:29,334 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 17:07:29,517 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 17:07:29,703 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Summaries'...
+2026-02-25 17:07:29,884 - ResultsChecker - WARNING - [DB_EMPTY] WARNING: No data found in table.
+2026-02-25 17:18:41,726 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 17:18:42,939 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 17:18:45,955 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying OCRWorker...
+2026-02-25 17:18:50,774 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying TranslateWorker...
+2026-02-25 17:18:53,338 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SpeechWorker...
+2026-02-25 17:18:55,922 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SummaryWorker...
+2026-02-25 17:19:24,702 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 17:19:25,075 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 17:19:25,257 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 17:19:25,436 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Summaries'...
+2026-02-25 17:19:25,609 - ResultsChecker - WARNING - [DB_EMPTY] WARNING: No data found in table.
+2026-02-25 17:24:09,425 - TableManager - INFO - [TABLE_CHECK] INFO: Deploying individual table schemas...
+2026-02-25 17:24:10,944 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying LabelWorker...
+2026-02-25 17:24:16,277 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying OCRWorker...
+2026-02-25 17:24:18,744 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying TranslateWorker...
+2026-02-25 17:24:23,578 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SpeechWorker...
+2026-02-25 17:24:26,230 - SystemManager - INFO - [WORKER_DEPLOY] INFO: Deploying SummaryWorker...
+2026-02-25 17:24:57,421 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Labels'...
+2026-02-25 17:24:57,823 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_OCR'...
+2026-02-25 17:24:58,014 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Translations'...
+2026-02-25 17:24:58,210 - ResultsChecker - INFO - [DB_SCAN] INFO: 🔎 Checking table 'Analysis_Summaries'...
+2026-02-25 21:15:27,841 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:16:16,150 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:16:16,151 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: 'S3Repository' object has no attribute 'upload_image'
+2026-02-25 21:19:19,062 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:19:36,077 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:19:36,078 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: S3Repository.upload_file() missing 2 required positional arguments: 'content_type' and 'feedback_id'
+2026-02-25 21:22:06,431 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:22:28,474 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:22:28,474 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: S3Repository.upload_file() got an unexpected keyword argument 'file_data'
+2026-02-25 21:25:43,142 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:26:04,025 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:26:04,026 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: S3Repository.upload_file() missing 1 required positional argument: 'feedback_id'
+2026-02-25 21:28:55,391 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:29:10,636 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:29:10,642 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: S3Repository.upload_file() missing 1 required positional argument: 'feedback_id'
+2026-02-25 21:31:22,103 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:31:38,718 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:31:39,284 - PipelineFactory - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '', 'user_id': 'admin_edwin', 'image_data...
+2026-02-25 21:31:39,285 - PipelineFactory - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-25 21:31:39,285 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: 'clean_text'
+2026-02-25 21:34:10,536 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:34:27,088 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:34:27,624 - PipelineFactory - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '', 'user_id': 'admin_edwin', 'image_data...
+2026-02-25 21:34:27,628 - PipelineFactory - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-25 21:34:27,629 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: "Ingestor failed to provide text. Keys found: ['text', 'metadata', 'timestamp']"
+2026-02-25 21:37:21,323 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:37:37,585 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:37:38,078 - PipelineFactory - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '', 'user_id': 'admin_edwin', 'image_data...
+2026-02-25 21:37:38,078 - PipelineFactory - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-25 21:37:38,078 - PipelineFactory - INFO - [AWS_TRANS] DEBUG: Sending: 
+2026-02-25 21:37:38,083 - PipelineFactory - ERROR - [AWS_TRANS_ERR] ERROR: Parameter validation failed:
+Invalid length for parameter Text, value: 0, valid min length: 1
+2026-02-25 21:37:38,084 - PipelineFactory - INFO - [AWS_COMP] DEBUG: Analyzing: 
+2026-02-25 21:37:38,084 - PipelineFactory - ERROR - [AWS_COMP_ERR] ERROR: Parameter validation failed:
+Invalid length for parameter Text, value: 0, valid min length: 1
+2026-02-25 21:37:38,088 - PipelineFactory - ERROR - [PIPELINE_ERROR] ERROR: 'safe_text'
+2026-02-25 21:39:35,588 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 21:39:50,020 - PipelineFactory - INFO - [S3_UPLOAD_START] INFO: Uploading french.jpg
+2026-02-25 21:39:50,517 - PipelineFactory - INFO - [INGESTION_INPUT] DEBUG: Raw data head: {'text': '', 'user_id': 'admin_edwin', 'image_data...
+2026-02-25 21:39:50,517 - PipelineFactory - INFO - [INGESTION_COMPLETE] SUCCESS: Data mapped to internal schema
+2026-02-25 21:39:50,517 - PipelineFactory - INFO - [AWS_TRANS] DEBUG: Sending: 
+2026-02-25 21:39:50,518 - PipelineFactory - ERROR - [AWS_TRANS_ERR] ERROR: Parameter validation failed:
+Invalid length for parameter Text, value: 0, valid min length: 1
+2026-02-25 21:39:50,520 - PipelineFactory - INFO - [AWS_COMP] DEBUG: Analyzing: 
+2026-02-25 21:39:50,521 - PipelineFactory - ERROR - [AWS_COMP_ERR] ERROR: Parameter validation failed:
+Invalid length for parameter Text, value: 0, valid min length: 1
+2026-02-25 21:39:50,717 - PipelineFactory - INFO - [FEEDBACK_SAVE] SUCCESS: ID: 5a50b37d-a26c-4741-a70b-9e821ddac5ea
+2026-02-25 21:39:50,717 - PipelineFactory - INFO - [PIPELINE_END] INFO: Saved record 5a50b37d-a26c-4741-a70b-9e821ddac5ea
+2026-02-25 23:35:02,315 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 23:45:41,377 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-25 23:52:36,549 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 07:34:11,943 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 07:41:33,933 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 08:05:52,802 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 08:17:15,034 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 08:18:07,690 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 08:18:47,832 - PipelineFactory - INFO - [DB_SCAN] SUCCESS: Retrieved 7 total records
+2026-02-26 12:14:58,761 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 12:18:43,532 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 12:25:53,804 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 16:13:37,191 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 16:21:20,206 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 16:23:02,080 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 16:26:37,326 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 16:29:31,992 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 16:37:57,564 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 18:33:01,115 - DataSeeder - INFO - [SEEDING] START: Generating 20 test records.
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 0: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 1: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 2: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 3: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 4: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 5: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,192 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 6: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 7: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 8: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 9: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 10: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 11: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 12: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 13: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 14: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 15: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 16: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 17: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 18: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - ERROR - [SEEDING] ERROR: Failed to save record 19: 'DynamoDBStorage' object has no attribute 'save_analysis'
+2026-02-26 18:33:01,193 - DataSeeder - INFO - [SEEDING] SUCCESS: Finished planting 20 records.
+2026-02-26 18:36:25,548 - DataSeeder - INFO - [SEEDING] START: Generating 20 test records.
+2026-02-26 18:36:26,058 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 5588c1be-0676-406a-818d-fe7ff5107796
+2026-02-26 18:36:26,233 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 3e1b1fae-9e7c-41e0-90a7-00266afd2274
+2026-02-26 18:36:26,421 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 3ac49132-fa40-49d3-bc17-575a1a509ab2
+2026-02-26 18:36:26,609 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 1ba90f45-cb2a-48fe-8529-e23cba481e49
+2026-02-26 18:36:26,792 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: b0eb1879-0c5d-4aa0-a983-00b8e9c06217
+2026-02-26 18:36:26,974 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: c2af23ac-6f61-4d27-b8cc-24bf3feef44a
+2026-02-26 18:36:27,164 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 9f5e11c3-d1fd-4b35-910c-5d53a7863d2c
+2026-02-26 18:36:27,345 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: a3580c16-2504-4ea9-9713-bfed6c4ba2bf
+2026-02-26 18:36:27,533 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 3e15ff9e-c521-4d75-831c-5a33a1c32373
+2026-02-26 18:36:27,715 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 7fc477ab-fc97-4f86-a73a-0b6983c87a60
+2026-02-26 18:36:27,893 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 78284070-beee-41a2-a2b6-806d187cd377
+2026-02-26 18:36:28,082 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 824b8e26-71cd-45c3-a56f-8991664358b0
+2026-02-26 18:36:28,261 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 72bb00e8-0ea3-4d05-872a-4888ae56dc19
+2026-02-26 18:36:28,445 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: e4603f42-322d-4163-8e90-b0ccddb84f18
+2026-02-26 18:36:28,622 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 2e97ecd2-473e-48ca-a90b-34ddda9eba76
+2026-02-26 18:36:28,804 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: e8f59305-1cb9-42c6-a2cd-a54a47dbf9e3
+2026-02-26 18:36:28,993 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 6e660529-c949-4f00-a569-e71804d8e146
+2026-02-26 18:36:29,172 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 5e7ad916-f251-4b34-a0be-a8c1c9d8f512
+2026-02-26 18:36:29,364 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: 899a2e47-d510-4ae4-a261-090b0309ca49
+2026-02-26 18:36:29,542 - DataSeeder - INFO - [DB_SAVE] SUCCESS: ID: fad5040d-4681-4450-8cf8-f4991acf7580
+2026-02-26 18:36:29,542 - DataSeeder - INFO - [SEEDING] SUCCESS: Finished planting 20 records.
+2026-02-26 19:42:46,463 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 19:43:59,462 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 19:45:48,581 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 19:47:47,942 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 19:50:21,451 - PipelineFactory - INFO - [AUTH_LOGIN_FAIL] WARN: Invalid password for admin_edwin.
+2026-02-26 19:50:29,788 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 20:36:36,414 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 20:37:52,479 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 20:42:44,287 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-26 20:42:57,495 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 20:43:07,002 - PipelineFactory - INFO - Processing text-only input as text_3605b134.txt
+2026-02-26 20:45:00,055 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 20:45:22,602 - PipelineFactory - INFO - [DB_SCAN] SUCCESS: Retrieved 27 total records
+2026-02-26 20:45:38,135 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 20:46:14,458 - PipelineFactory - INFO - Processing text-only input as text_a61f9894.txt
+2026-02-26 20:47:55,929 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 20:48:38,233 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 20:48:44,947 - PipelineFactory - INFO - [DB_SCAN] SUCCESS: Retrieved 27 total records
+2026-02-26 21:39:29,838 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-26 21:39:46,134 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 21:39:59,642 - PipelineFactory - INFO - Processing text-only input as text_399609f3.txt
+2026-02-26 21:41:25,382 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 21:41:40,347 - PipelineFactory - INFO - [DB_SCAN] SUCCESS: Retrieved 27 total records
+2026-02-26 21:41:58,015 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 21:43:34,292 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-26 21:43:50,027 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 21:44:00,536 - PipelineFactory - INFO - Processing text-only input as text_8d067c0f.txt
+2026-02-26 21:45:21,003 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 21:48:31,895 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-26 21:48:52,658 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 21:49:06,538 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 21:50:03,129 - PipelineFactory - INFO - Processing text-only input as text_6ab2146d.txt
+2026-02-26 21:51:33,968 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-26 23:03:01,025 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-26 23:03:15,843 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-26 23:03:31,513 - PipelineFactory - INFO - Processing text-only input as text_3a4cdb37.txt
+2026-02-26 23:05:03,586 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-27 00:33:53,661 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-27 00:34:09,482 - PipelineFactory - INFO - [AUTH_LOGIN] INFO: User admin_edwin logged in.
+2026-02-27 00:34:22,681 - PipelineFactory - INFO - Processing text-only input as text_c00b9e67.txt
+2026-02-27 00:36:00,690 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-27 00:36:10,483 - PipelineFactory - INFO - [DB_SCAN] SUCCESS: Retrieved 27 total records
+2026-02-27 00:36:48,477 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-27 07:14:54,361 - PipelineFactory - INFO - [DB_QUERY] SUCCESS: Found 4 records for user admin_edwin
+2026-02-27 07:15:19,655 - PipelineFactory - INFO - Processing text-only input as text_c32824b0.txt
+2026-02-27 23:08:43,399 - VMware-Local-Stack - INFO - [USER_SAVE] SUCCESS: User: tester_f5e1
+2026-02-27 23:08:43,400 - VMware-Local-Stack - INFO - [AUTH_REGISTER] INFO: User tester_f5e1 registered.
+2026-02-27 23:08:43,732 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User tester_f5e1 logged in.
+2026-02-27 23:14:57,361 - VMware-Local-Stack - INFO - [USER_SAVE] SUCCESS: User: tester_35ce
+2026-02-27 23:14:57,361 - VMware-Local-Stack - INFO - [AUTH_REGISTER] INFO: User tester_35ce registered.
+2026-02-27 23:14:57,614 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User tester_35ce logged in.
+2026-02-27 23:17:50,954 - VMware-Local-Stack - INFO - [USER_SAVE] SUCCESS: User: tester_1986
+2026-02-27 23:17:50,955 - VMware-Local-Stack - INFO - [AUTH_REGISTER] INFO: User tester_1986 registered.
+2026-02-27 23:17:51,200 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User tester_1986 logged in.
+2026-02-27 23:19:13,236 - VMware-Local-Stack - INFO - [USER_SAVE] SUCCESS: User: tester_727d
+2026-02-27 23:19:13,237 - VMware-Local-Stack - INFO - [AUTH_REGISTER] INFO: User tester_727d registered.
+2026-02-27 23:19:13,493 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User tester_727d logged in.
+2026-02-27 23:47:28,747 - UIAITest - ERROR - [MISTRAL] ERROR: 401 Client Error: Unauthorized for url: https://api.mistral.ai/v1/chat/completions
+2026-02-28 08:26:08,099 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:06:47,584 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:07:16,301 - VMware-Local-Stack - ERROR - [DB_GET_ERR] ERROR: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Cannot do operations on a non-existent table
+2026-02-28 09:10:59,145 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:15:09,169 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:21:24,123 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:25:01,269 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:25:35,221 - VMware-Local-Stack - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin
+2026-02-28 09:25:38,540 - VMware-Local-Stack - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-28 09:26:04,955 - VMware-Local-Stack - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin
+2026-02-28 09:26:07,911 - VMware-Local-Stack - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-28 09:26:19,415 - VMware-Local-Stack - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin
+2026-02-28 09:26:23,698 - VMware-Local-Stack - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin
+2026-02-28 09:26:25,138 - VMware-Local-Stack - INFO - [DB_SCAN] SUCCESS: Retrieved 6 total records
+2026-02-28 09:28:02,809 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:28:04,547 - VMware-Local-Stack - INFO - [DB_QUERY] SUCCESS: Found 0 records for user admin
+2026-02-28 09:38:15,485 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:49:56,535 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 09:50:13,896 - VMware-Local-Stack - ERROR - [DB_GET_ERR] ERROR: FeedbackModel.__init__() missing 1 required positional argument: 'text'
+2026-02-28 10:23:54,358 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 10:24:04,446 - VMware-Local-Stack - INFO - [DB_SCAN] SUCCESS: Retrieved 8 total records
+2026-02-28 10:33:20,253 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 10:35:58,818 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 10:40:42,992 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 10:41:29,573 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-02-28 11:53:01,416 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_6f51 saved to DynamoDB.
+2026-02-28 11:53:01,416 - VMware-Local-Stack - INFO - [AUTH_REGISTER] INFO: User user_6f51 registered.
+2026-02-28 12:02:14,445 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_01be saved.
+2026-02-28 12:02:14,446 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_01be registered.
+2026-02-28 12:03:45,089 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_91ab saved.
+2026-02-28 12:03:45,089 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_91ab registered.
+2026-02-28 12:04:14,072 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_e2ba saved.
+2026-02-28 12:04:14,072 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_e2ba registered.
+2026-02-28 12:05:49,522 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_b22d saved.
+2026-02-28 12:05:49,522 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_b22d registered.
+2026-02-28 12:05:49,550 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for job_a8d177
+2026-02-28 12:06:55,214 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_1a7a saved.
+2026-02-28 12:06:55,214 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_1a7a registered.
+2026-02-28 12:06:55,249 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for job_0524a1
+2026-02-28 12:06:55,267 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for job_0524a1
+2026-02-28 12:08:00,833 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_ffc5 saved.
+2026-02-28 12:08:00,833 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_ffc5 registered.
+2026-02-28 12:08:00,855 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for job_366c2d
+2026-02-28 12:08:00,869 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for job_366c2d
+2026-02-28 12:10:23,657 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_dcec saved.
+2026-02-28 12:10:23,658 - VMware-Local-Stack - INFO - [AUTH] INFO: User user_dcec registered.
+2026-02-28 12:10:23,681 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for job_b58def
+2026-02-28 12:10:23,696 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for job_b58def
+2026-02-28 12:10:27,580 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for broken_job_1379
+2026-02-28 12:35:00,245 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for broken_1a87
+2026-02-28 12:36:31,438 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for broken_7e53
+2026-02-28 12:39:26,538 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_f893 saved.
+2026-02-28 12:39:26,556 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for job_617ce8
+2026-02-28 12:39:26,570 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for job_617ce8
+2026-02-28 12:39:26,614 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for broken_17fa
+2026-02-28 12:48:29,453 - VMware-Local-Stack - INFO - [DATABASE] INFO: User user_6e95 saved.
+2026-02-28 12:48:29,488 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for job_ce260c
+2026-02-28 12:48:29,504 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for job_ce260c
+2026-02-28 12:48:29,551 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for broken_958f
+2026-02-28 13:08:41,648 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 13:08:41,648 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 13:20:03,001 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 13:20:03,001 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 13:20:04,565 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for id_test_708f
+2026-02-28 13:20:04,586 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for id_test_708f
+2026-02-28 13:21:19,501 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 13:21:19,501 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 13:21:21,351 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for id_test_4216
+2026-02-28 13:21:21,384 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for id_test_4216
+2026-02-28 13:21:23,519 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for id_test_1834
+2026-02-28 13:21:23,554 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for id_test_1834
+2026-02-28 13:21:24,709 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for id_test_a751
+2026-02-28 13:21:24,720 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for id_test_a751
+2026-02-28 13:21:25,733 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for id_test_d22a
+2026-02-28 13:21:25,751 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved for id_test_d22a
+2026-02-28 13:42:04,505 - VMware-Local-Stack - INFO - [DATABASE] INFO: User strict_tester_edwin saved.
+2026-02-28 13:42:04,506 - VMware-Local-Stack - INFO - [AUTH] INFO: User strict_tester_edwin registered.
+2026-02-28 13:44:01,870 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 13:44:01,871 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 13:44:03,748 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for 4ae1f9fb-d0b8-4d7b-b189-f8ae2769fb0e
+2026-02-28 13:44:06,437 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for 19b8d7da-fb7e-4370-88d6-a3eb5d071d6f
+2026-02-28 13:44:07,486 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for f09bff3b-f139-4828-985e-b91e07ab8e71
+2026-02-28 13:44:08,219 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved for 2e880d58-fda4-46df-87a8-f46e783598e2
+2026-02-28 13:50:22,129 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 13:50:22,130 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 13:53:38,220 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 13:53:38,220 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:11:16,276 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:11:16,277 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:11:18,105 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:11:20,259 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:11:21,363 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:11:22,007 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:12:46,819 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:12:46,819 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:12:49,135 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:12:49,152 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:12:54,504 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:12:54,520 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:12:55,905 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:12:55,937 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:12:56,653 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:12:56,669 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:27:54,501 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:27:54,502 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:29:29,039 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:29:29,039 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:29:43,409 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:29:43,424 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:30:00,383 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:30:00,408 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:30:11,132 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:30:11,157 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:30:13,632 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:30:13,652 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:37:25,992 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:37:25,993 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:37:42,456 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:37:42,490 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:38:12,821 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:38:12,844 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:38:21,911 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:38:21,928 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:38:25,300 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:38:25,319 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:39:27,666 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:39:27,666 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:39:41,838 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:39:41,862 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:40:10,393 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:40:10,419 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:40:19,396 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:40:19,413 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:40:22,139 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:40:22,161 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:44:48,784 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:44:48,785 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:45:05,003 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:45:05,031 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:45:27,714 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:45:27,736 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:45:36,178 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:45:36,211 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:45:38,399 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:45:38,432 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:51:26,970 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 14:51:26,970 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 14:51:42,074 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:51:42,101 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:51:59,475 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:51:59,500 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:52:08,135 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:52:08,165 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 14:52:11,189 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 14:52:11,207 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 15:02:34,591 - VMware-Local-Stack - ERROR - [DATABASE] ERROR: Save failed: An error occurred (InternalFailure) when calling the PutItem operation (reached max retries: 9): The request processing has failed because of an unknown error, exception or failure.
+2026-02-28 15:07:46,840 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 15:07:46,840 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 15:10:03,528 - VMware-Local-Stack - INFO - [DATABASE] INFO: User analyst_edwin saved.
+2026-02-28 15:10:03,529 - VMware-Local-Stack - INFO - [AUTH] INFO: User analyst_edwin registered.
+2026-02-28 15:10:03,556 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 15:10:03,580 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 15:10:03,602 - VMware-Local-Stack - INFO - [DATABASE] INFO: Metadata saved.
+2026-02-28 15:10:03,620 - VMware-Local-Stack - INFO - [DATABASE] INFO: Summary saved.
+2026-02-28 15:29:18,725 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-28 15:29:26,576 - PipelineFactory - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-02-28 15:38:45,415 - VMware-Local-Stack - INFO - [AUTH_LOGIN_FAIL] WARN: User admin not found.
+2026-02-28 15:39:07,052 - VMware-Local-Stack - INFO - [AUTH_LOGIN_FAIL] WARN: User admin_edwin not found.
+2026-02-28 15:39:08,997 - VMware-Local-Stack - INFO - [AUTH_LOGIN_FAIL] WARN: User admin_edwin not found.
+2026-02-28 15:40:44,461 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 15:45:52,199 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 15:47:59,163 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 15:48:03,441 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 15:54:56,922 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 15:55:00,007 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:00:29,829 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:00:32,546 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:01:39,818 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:01:44,944 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:05:49,193 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:05:55,581 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:06:33,842 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:06:38,531 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:10:05,943 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:12:29,093 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:14:10,289 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:23:01,331 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:23:23,786 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:30:39,133 - VMware-Local-Stack - INFO - [AUTH_LOGIN_FAIL] WARN: User admin not found.
+2026-02-28 16:31:03,540 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:31:07,573 - VMware-Local-Stack - INFO - [DATABASE] INFO: Retrieved 0 records for user: analyst_edwin
+2026-02-28 16:38:03,977 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:54:04,216 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 16:55:43,837 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:03:51,546 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:19:12,209 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:26:09,614 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:37:36,864 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:40:27,697 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:41:35,791 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:45:49,880 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:48:58,559 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 17:53:33,489 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:24:20,388 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:25:54,732 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:28:22,156 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:30:25,576 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:35:53,245 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:43:23,128 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:47:47,805 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:48:43,459 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:50:55,614 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 18:59:46,869 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 19:05:09,623 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-02-28 19:06:47,613 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:06:43,386 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:16:13,465 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:18:46,020 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:30:49,462 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:31:19,312 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:34:45,134 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:34:48,594 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:35:17,876 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:35:43,170 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:35:47,984 - VMware-Local-Stack - ERROR - [DB_SCAN_ERROR] ERROR: Failed to fetch users: type object 'UserModel' has no attribute 'from_dict'
+2026-03-18 17:36:03,284 - VMware-Local-Stack - ERROR - [DB_SCAN_ERROR] ERROR: Failed to fetch users: type object 'UserModel' has no attribute 'from_dict'
+2026-03-18 17:41:50,983 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 17:41:53,458 - VMware-Local-Stack - ERROR - [DB_SCAN_ERROR] ERROR: Failed to fetch users: type object 'UserModel' has no attribute 'from_dict'
+2026-03-18 17:42:19,982 - VMware-Local-Stack - INFO - [AUTH_LOGIN] INFO: User analyst_edwin logged in.
+2026-03-18 21:24:06,084 - AWS_Connectivity_Test - INFO - [AWS_TRANS] DEBUG: Sending: Hola
+2026-03-18 21:24:06,835 - AWS_Connectivity_Test - INFO - [AWS_TRANS] SUCCESS: Translation received
+2026-03-19 08:02:22,058 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:34:23,404 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:36:34,475 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:37:16,729 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:37:21,917 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:39:30,163 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:41:14,021 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:41:33,091 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:41:53,125 - AWS_Pipeline - INFO - [AUTH_LOGIN_FAIL] WARN: User admin not found.
+2026-03-19 08:46:07,563 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:46:19,093 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 08:51:33,170 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 08:52:15,147 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 09:38:17,909 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 09:38:29,925 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 09:38:48,132 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error fetching feedback for admin: name 'Attr' is not defined
+2026-03-19 09:38:56,546 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error fetching feedback for admin: name 'Attr' is not defined
+2026-03-19 10:41:51,856 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 10:41:55,153 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 10:42:07,285 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 10:42:44,207 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 10:42:47,958 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 10:43:06,183 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 10:46:18,036 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 10:46:25,872 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 10:46:40,317 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 10:46:49,020 - AWS_Pipeline - INFO - [PIPELINE] INFO: Processing image upload: french.jpg
+2026-03-19 11:17:58,955 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 11:18:13,995 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 11:18:21,640 - AWS_Pipeline - INFO - [PIPELINE] INFO: Processing image upload: french.jpg
+2026-03-19 11:18:24,033 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:26,221 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:28,410 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:30,603 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:32,783 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:34,971 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:37,152 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:39,342 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:41,521 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:43,711 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:45,893 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:48,073 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:50,262 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:52,575 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:54,758 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:18:56,952 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:18:59,144 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:01,324 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:03,505 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:05,691 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:07,881 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:10,072 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:12,259 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:14,453 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:16,640 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:18,831 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:21,018 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:23,201 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:25,384 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:27,561 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:29,746 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:31,931 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:34,124 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:36,308 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:38,493 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:40,676 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:42,895 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:45,085 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:47,266 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:49,440 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:51,627 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:53,814 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:55,992 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:19:58,175 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:20:00,349 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-03-19 11:20:02,543 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:04,734 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:06,922 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:09,115 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:11,300 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:13,491 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:15,671 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:17,859 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:20,054 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:22,236 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:24,415 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:26,601 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:28,793 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:30,976 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:20:33,154 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ValidationException) when calling the GetItem operation: The provided key element does not match the schema
+2026-03-19 11:32:29,824 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 11:34:05,990 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 11:34:17,649 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 11:34:29,106 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 11:34:36,850 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_0850b0e6
+2026-03-19 11:56:01,672 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 11:56:08,416 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 11:56:22,334 - AWS_Pipeline - INFO - [AUTH_LOGIN_FAIL] WARN: Invalid password for admin.
+2026-03-19 11:56:29,325 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 11:56:35,801 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_2827ee0f
+2026-03-19 12:42:08,913 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 12:42:20,347 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 12:42:31,919 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading courses_winter.png with ID admin_92249d98
+2026-03-19 13:17:10,306 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:17:25,495 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:17:32,644 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_d81ed610
+2026-03-19 13:25:42,236 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:25:51,982 - AWS_Pipeline - INFO - [AUTH_LOGIN_FAIL] WARN: Invalid password for admin.
+2026-03-19 13:25:55,954 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:26:02,914 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_8b1cf547
+2026-03-19 13:35:42,809 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:36:37,655 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:36:54,727 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:37:26,588 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:37:40,282 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:37:46,685 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_10bca02c
+2026-03-19 13:45:56,372 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:46:11,621 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:46:19,369 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading text_30416a24.txt with ID admin_30416a24
+2026-03-19 13:47:36,466 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading text_886b04c2.txt with ID admin_886b04c2
+2026-03-19 13:48:39,709 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:49:21,701 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:49:28,252 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_dc4b3b1c
+2026-03-19 13:55:23,717 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:55:40,636 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:55:47,663 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_7571e488
+2026-03-19 13:57:37,060 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_0f15a573
+2026-03-19 13:59:24,713 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 13:59:35,689 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 13:59:44,304 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading text_55fd44f1.txt with ID admin_55fd44f1
+2026-03-19 14:09:30,209 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 14:09:42,528 - AWS_Pipeline - INFO - [AUTH_LOGIN_FAIL] WARN: Invalid password for admin.
+2026-03-19 14:09:46,136 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 14:09:53,028 - AWS_Pipeline - INFO - [PIPELINE] INFO: Uploading french.jpg with ID admin_8f11cb8a
+2026-03-19 14:22:48,239 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 14:23:05,802 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 14:29:30,904 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 14:29:57,780 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 14:30:03,103 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 14:33:01,080 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 14:33:07,160 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 14:35:03,922 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-19 15:01:42,815 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 15:01:50,189 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 17:33:08,291 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 17:33:18,458 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 17:37:38,068 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 17:37:44,392 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 17:51:04,778 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 17:51:23,066 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 17:56:57,921 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 17:57:03,570 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 18:26:33,858 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 18:26:39,358 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 18:30:33,473 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-19 18:44:53,716 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 18:45:05,156 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 18:53:00,188 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 18:53:05,005 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 19:01:09,616 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 19:01:17,804 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 19:05:07,332 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 19:05:12,036 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 22:58:29,275 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:00:33,756 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:00:38,704 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:01:47,748 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:01:52,409 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:02:16,316 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:02:20,654 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:06:47,852 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:06:53,559 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:07:58,843 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:08:02,987 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:12:35,038 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:12:46,629 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:12:52,619 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:15:59,240 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:16:04,888 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:18:22,233 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:22:16,578 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:22:21,652 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:31:10,812 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:31:16,654 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-19 23:42:14,097 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-19 23:42:19,949 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-20 08:22:08,038 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-20 08:22:19,414 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-20 08:22:34,453 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-20 10:40:38,077 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-20 10:41:04,120 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-20 10:57:48,796 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-20 10:57:54,036 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.

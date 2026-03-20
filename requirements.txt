@@ -1,0 +1,17 @@
+# --- Core UI & Orchestration ---
+streamlit
+boto3
+requests
+python-dotenv
+
+# --- Local Infrastructure (VMware/Ollama Stack) ---
+gtts
+pillow
+opencv-python-headless  # Optional: if you do any local image preprocessing
+
+# --- Cloud Infrastructure (AWS Stack) ---
+# (boto3 handles Rekognition, Textract, Polly, and DynamoDB)
+
+# --- Utilities & Data Handling ---
+pandas                  # For the Analytics Dashboard tables
+plotly                  # For the Analytics Dashboard charts

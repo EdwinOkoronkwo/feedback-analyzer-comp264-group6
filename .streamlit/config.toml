@@ -1,0 +1,7 @@
+# .streamlit/config.toml
+[theme]
+primaryColor = "#00bcd4"          # Bright Cyan (Material accent)
+backgroundColor = "#0f172a"      # Deep Slate Blue (Ocean base)
+secondaryBackgroundColor = "#1e293b" # Slightly lighter blue for sidebars/widgets
+textColor = "#f8fafc"            # Off-white for readability
+font = "sans serif"

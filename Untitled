@@ -1,0 +1,44 @@
+import pandas as pd
+import boto3
+from botocore.exceptions import ClientError
+
+class LocalAnalyticsProvider:
+    def __init__(self):
+        # Talk to local DynamoDB
+        self.db = boto3.resource(
+            'dynamodb', 
+            endpoint_url='http://localhost:8000', 
+            region_name='us-east-1'
+        )
+        self.table_name = 'Feedback_Master'
+
+    def get_sentiment_summary(self):
+        """Scans local DynamoDB and groups by sentiment for the UI charts"""
+        try:
+            table = self.db.Table(self.table_name)
+            response = table.scan()
+            items = response.get('Items', [])
+            
+            if not items:
+                return []
+
+            # Use Pandas to count sentiments
+            df = pd.DataFrame(items)
+            
+            # Use 'sentiment' or 'SentimentValue' depending on your table schema
+            col_name = 'sentiment' if 'sentiment' in df.columns else 'SentimentValue'
+            
+            if col_name not in df.columns:
+                return []
+
+            summary = df[col_name].value_counts().reset_index()
+            summary.columns = ['sentiment', 'total']
+            
+            return summary.to_dict('records')
+        except Exception as e:
+            print(f"Local Analytics Error: {e}")
+            return []
+
+    def update_location(self):
+        """Mock method to keep the UI happy (Athena used this, we don't need it)"""
+        pass
