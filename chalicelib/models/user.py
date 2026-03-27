@@ -1,22 +1,27 @@
-from dataclasses import dataclass, asdict, field
+from dataclasses import dataclass, asdict
+from typing import Dict, Any
 from datetime import datetime
-import uuid
-
 
 @dataclass
 class UserModel:
     username: str
-    password_hash: str = None # Default to None to handle local 'password' fields
-    id: str = field(default_factory=lambda: str(uuid.uuid4()))
+    password_hash: str
     role: str = "user"
-    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    created_at: str = ""
+
+    def __post_init__(self):
+        if not self.created_at:
+            self.created_at = datetime.now().isoformat()
 
     @classmethod
-    def from_dict(cls, data):
-        # FIX: Map local 'password' to 'password_hash' if it exists
-        if 'password' in data and 'password_hash' not in data:
-            data['password_hash'] = data.pop('password')
-            
-        # FIX: Only pass arguments that the dataclass actually expects
-        valid_fields = {k: v for k, v in data.items() if k in cls.__dataclass_fields__}
-        return cls(**valid_fields)
+    def from_db(cls, item: Dict[str, Any]):
+        if not item: return None
+        return cls(
+            username=item['username'],
+            password_hash=item['password_hash'],
+            role=item.get('role', 'user'),
+            created_at=item.get('created_at', '')
+        )
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)

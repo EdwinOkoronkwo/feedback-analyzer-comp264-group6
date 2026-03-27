@@ -1059,3 +1059,103 @@ Invalid length for parameter Text, value: 0, valid min length: 1
 2026-03-20 10:41:04,120 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
 2026-03-20 10:57:48,796 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
 2026-03-20 10:57:54,036 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-24 09:47:24,121 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-24 09:47:43,736 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-24 09:48:58,261 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-24 09:53:32,308 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-24 09:53:46,194 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-24 09:54:08,721 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-24 10:10:59,428 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-24 13:09:56,162 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-24 13:10:06,284 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-25 09:07:51,620 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-25 09:08:31,572 - AWS_Pipeline - INFO - [AUTH_LOGIN] INFO: User admin logged in.
+2026-03-25 09:08:52,960 - AWS_Pipeline - ERROR - [DATABASE] ERROR: Error: name 'Attr' is not defined
+2026-03-26 19:35:06,630 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 19:38:03,491 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 19:38:18,624 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 19:39:44,279 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 19:39:50,072 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 19:55:40,103 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 19:57:49,899 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 20:00:11,790 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 20:03:19,974 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 20:04:46,207 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 20:09:20,896 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:19:15,836 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:22:49,032 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:27:29,483 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:30:12,187 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:36:18,460 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:36:19,055 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:38:45,352 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:40:00,163 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:42:09,132 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 21:42:41,930 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:17:20,558 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:18:01,964 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:22:27,733 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:24:40,783 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:26:27,367 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:28:09,025 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:28:49,799 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:31:12,400 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:31:45,925 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:38:37,195 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:42:23,001 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:42:34,356 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_18601a3b saved.
+2026-03-26 22:42:34,370 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-26 22:44:59,051 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:45:11,866 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_3a9c9abc saved.
+2026-03-26 22:45:11,883 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-26 22:46:48,206 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:47:03,955 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_e21942f5 saved.
+2026-03-26 22:47:03,968 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-26 22:52:42,658 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:52:54,013 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_79924d31 saved.
+2026-03-26 22:52:54,028 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-26 22:57:55,472 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:58:06,615 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_2067fada saved.
+2026-03-26 22:58:06,627 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-26 22:59:00,866 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 22:59:40,120 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:10:56,988 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:11:02,500 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:11:06,597 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:23:08,723 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:23:13,008 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:30:05,372 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:30:10,787 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:37:46,584 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:37:50,152 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:37:54,478 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:42:33,912 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:42:43,347 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:50:48,872 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:51:50,776 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:51:54,848 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:51:57,831 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:55:59,192 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:56:03,315 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:56:06,365 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:57:28,472 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:57:31,205 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:57:35,147 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-26 23:59:29,058 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:59:32,026 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-26 23:59:35,724 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-27 00:19:29,694 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-27 00:19:29,696 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-27 00:19:35,067 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-27 00:19:38,507 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-27 00:22:05,216 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-27 00:22:24,408 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_25706436 saved.
+2026-03-27 00:22:24,420 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-27 00:23:52,115 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_0278694e saved.
+2026-03-27 00:23:52,131 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-27 00:35:49,960 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-27 00:35:55,460 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-27 00:36:45,070 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-27 00:36:50,739 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-27 00:37:09,074 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_495134bd saved.
+2026-03-27 00:37:09,093 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.

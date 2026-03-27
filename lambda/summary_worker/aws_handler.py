@@ -41,34 +41,30 @@ def get_mistral_summary(text, api_key):
 
         
 def lambda_handler(event, context):
-    # 1. Handle Input (Allow for 'text' or 'translated_text' or 'ocr_text')
     fid = event.get('feedback_id')
-    # If it's direct text, it might just be in 'text'
-    text_to_process = event.get('translated_text') or event.get('text') or event.get('ocr_text')
-    mistral_key = os.environ.get('MISTRAL_API_KEY')
+    # The Master Worker or Analysis Worker passes the text here
+    text_to_process = event.get('text') or event.get('translated_text')
+    
+    # 1. Get the Summary from Mistral
+    summary = get_mistral_summary(text_to_process, os.environ.get('MISTRAL_API_KEY'))
 
-    if not text_to_process or text_to_process == "N/A":
-        print(f"⚠️ No text found for {fid}")
-        return {"status": "error", "message": "No text to process"}
-
-    print(f"🤖 Summarizer Worker: Requesting Mistral summary for {fid}")
-
-    # 2. Get Mistral Summary
-    summary = get_mistral_summary(text_to_process, mistral_key)
-
-    # 3. 🎯 THE CRITICAL FIX: Update DynamoDB with BOTH Summary AND Status
-    # This 'status' change is what tells the UI to stop polling!
-    dynamodb.Table('Analysis_Summaries').update_item(
-        Key={'feedback_id': fid},
-        UpdateExpression="SET summary = :s, #stat = :c, translated_text = :t",
-        ExpressionAttributeValues={
-            ':s': summary, 
-            ':c': 'COMPLETED',
-            ':t': text_to_process # Save it here so 'Translated Text' isn't N/A in the UI
-        },
-        ExpressionAttributeNames={'#stat': 'status'}
-    )
-
+    # 2. 🏁 The Final Update
+    # We map 'status' to '#stat' because 'status' is a reserved keyword in DynamoDB
+    try:
+        table = dynamodb.Table('Analysis_Summaries')
+        table.update_item(
+            Key={'feedback_id': fid},
+            UpdateExpression="SET summary = :s, #stat = :c, translated_text = :t",
+            ExpressionAttributeValues={
+                ':s': summary, 
+                ':c': 'COMPLETED',
+                ':t': text_to_process # Ensures "Translated Text" isn't N/A in the UI
+            },
+            ExpressionAttributeNames={'#stat': 'status'}
+        )
+        print(f"✅ Finalized record for {fid}")
+    except Exception as e:
+        print(f"❌ DB Update Failed: {e}")
     # 4. RELAY: Trigger Speech Worker
     # Send the 'summary' to Polly so it reads the AI summary, not the raw text
     lambda_client.invoke(

@@ -1,0 +1,132 @@
+classDiagram
+direction TB
+
+%% ==========================================
+%% 1. FRONTEND LAYER (The Peak)
+%% ==========================================
+class Streamlit_App {
+    <<Entry Point>>
+    +web/app.py
+    +main()
+}
+
+class AnalyzerUI {
+    <<Component>>
+    +web/components/analyzer_ui.py
+}
+
+class HistoryUI {
+    <<Component>>
+    +web/components/history_ui.py
+}
+
+Streamlit_App --> AnalyzerUI
+Streamlit_App --> HistoryUI
+
+%% ==========================================
+%% 2. CONTROLLER & INTERFACE (The Bridge)
+%% ==========================================
+class PipelineBridge {
+    <<Controller>>
+    -IPipeline strategy
+}
+
+class IPipeline {
+    <<Interface>>
+    +run(payload)*
+}
+
+AnalyzerUI --> PipelineBridge
+HistoryUI --> PipelineBridge
+PipelineBridge --> IPipeline
+
+%% ==========================================
+%% 3. ORCHESTRATORS (The Masters)
+%% ==========================================
+class AWSPipeline { <<Master Lambda>> }
+class LocalPipeline { <<Local Master>> }
+
+IPipeline <|.. AWSPipeline
+IPipeline <|.. LocalPipeline
+
+%% ==========================================
+%% 4. THE INTERFACE BUS (Shared Logic)
+%% ==========================================
+class Interface_Bus { <<Shared Trunk>> }
+AWSPipeline -- Interface_Bus
+LocalPipeline -- Interface_Bus
+
+%% ==========================================
+%% 5. THE PROVIDER INTERFACES
+%% ==========================================
+class IIngestion { <<Interface>> }
+class IAnalyzer { <<Interface>> }
+class ISummarizer { <<Interface>> }
+class ISentiment { <<Interface>> }
+class ITranslator { <<Interface>> }
+class IPersistence { <<Interface>> }
+
+Interface_Bus -- IIngestion
+Interface_Bus -- IAnalyzer
+Interface_Bus -- ISummarizer
+Interface_Bus -- ISentiment
+Interface_Bus -- ITranslator
+Interface_Bus -- IPersistence
+
+%% ==========================================
+%% 6. AWS IMPLEMENTATIONS (Cloud Workers)
+%% ==========================================
+class AWS_Ingest { +ocr_worker (Textract) }
+class AWS_Analyze { +analysis_worker (Comprehend) }
+class AWS_Summary { +summary_worker (Mistral) }
+class AWS_Sentiment { +sentiment_worker (Comprehend) }
+class AWS_Translate { +translate_worker (Polly) }
+class AWS_Storage { +db_worker (S3 / DynamoCloud) }
+
+IIngestion <|.. AWS_Ingest
+IAnalyzer <|.. AWS_Analyze
+ISummarizer <|.. AWS_Summary
+ISentiment <|.. AWS_Sentiment
+ITranslator <|.. AWS_Translate
+IPersistence <|.. AWS_Storage
+
+%% ==========================================
+%% 7. LOCAL IMPLEMENTATIONS (VMware Workers)
+%% ==========================================
+class Local_Ingest { +Local_OCR (Pytesseract) }
+class Local_Analyze { +Local_Analysis (Mistral) }
+class Local_Summary { +Local_Summary (Mistral) }
+class Local_Sentiment { +Local_Sentiment (TextBlob) }
+class Local_Translate { +Local_Speech (gTTS) }
+class Local_Storage { +Local_DB (Disk / DynamoLocal) }
+
+IIngestion <|.. Local_Ingest
+IAnalyzer <|.. Local_Analyze
+ISummarizer <|.. Local_Summary
+ISentiment <|.. Local_Sentiment
+ITranslator <|.. Local_Translate
+IPersistence <|.. Local_Storage
+
+%% ==========================================
+%% STYLING & COLOR SCHEME
+%% ==========================================
+style Streamlit_App fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
+style AnalyzerUI fill:#dae8fc,stroke:#6c8ebf
+style HistoryUI fill:#dae8fc,stroke:#6c8ebf
+
+style IPipeline fill:#fff2cc,stroke:#d6b656,stroke-width:2px
+style Interface_Bus fill:#333,stroke:#333,color:#fff
+
+style AWS_Ingest fill:#d5e8d4,stroke:#82b366
+style AWS_Analyze fill:#d5e8d4,stroke:#82b366
+style AWS_Summary fill:#d5e8d4,stroke:#82b366
+style AWS_Sentiment fill:#d5e8d4,stroke:#82b366
+style AWS_Translate fill:#d5e8d4,stroke:#82b366
+style AWS_Storage fill:#d5e8d4,stroke:#82b366
+
+style Local_Ingest fill:#ffe6cc,stroke:#d79b00
+style Local_Analyze fill:#ffe6cc,stroke:#d79b00
+style Local_Summary fill:#ffe6cc,stroke:#d79b00
+style Local_Sentiment fill:#ffe6cc,stroke:#d79b00
+style Local_Translate fill:#ffe6cc,stroke:#d79b00
+style Local_Storage fill:#ffe6cc,stroke:#d79b00

@@ -11,3 +11,10 @@ class IAnalysisPipeline(ABC):
         secured, and persisted result.
         """
         pass
+
+
+class IPipelineBridge(ABC):
+    @abstractmethod
+    def trigger_pipeline(self, payload: dict, file_obj=None) -> dict:
+        """Starts the processing chain (OCR -> Analysis -> Summary)."""
+        pass
