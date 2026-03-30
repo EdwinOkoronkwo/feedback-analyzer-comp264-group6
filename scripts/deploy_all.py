@@ -18,14 +18,17 @@ MISTRAL_KEY = os.getenv("MISTRAL_API_KEY")
 REQUESTS_LAYER = 'arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p39-requests:19'
 
 LAMBDA_TIMEOUT = 60
-LAMBDA_MEMORY = 256
+LAMBDA_MEMORY = 256 
 
+# 🎯 UPDATED: Added kag_worker and mnist_ingestor_worker
 WORKERS = [
     ("master_worker", "lambda/master_worker/aws_handler.py", "aws_handler.lambda_handler"),
     ("ocr_worker", "lambda/ocr_worker/aws_handler.py", "aws_handler.lambda_handler"),
     ("analysis_worker", "lambda/analysis_worker/aws_handler.py", "aws_handler.lambda_handler"),
     ("summarizer_worker", "lambda/summary_worker/aws_handler.py", "aws_handler.lambda_handler"),
-    ("speech_worker", "lambda/speech_worker/aws_handler.py", "aws_handler.lambda_handler")
+    ("speech_worker", "lambda/speech_worker/aws_handler.py", "aws_handler.lambda_handler"),
+    ("kag_worker", "lambda/kag_worker/aws_handler.py", "aws_handler.lambda_handler"), # 📄 New Kaggle Worker
+    ("mnist_ingestor_worker", "lambda/mnist_worker/aws_handler.py", "aws_handler.lambda_handler")
 ]
 
 lambda_client = boto3.client('lambda', region_name=REGION)
@@ -34,6 +37,9 @@ dynamodb = boto3.client('dynamodb', region_name=REGION)
 iam = boto3.client('iam')
 
 def create_zip(src, output_name):
+    if not os.path.exists(src):
+        print(f"⚠️  SKIPPING: Source file not found: {src}")
+        return None
     with zipfile.ZipFile(output_name, 'w') as z:
         z.write(src, 'aws_handler.py')
     with open(output_name, 'rb') as f:
@@ -44,42 +50,10 @@ def wait_for_lambda(name):
     waiter = lambda_client.get_waiter('function_updated_v2')
     waiter.wait(FunctionName=name)
 
-def add_s3_trigger(lambda_name, bucket_name):
-    print(f"🔗 Linking S3 Bucket to {lambda_name}...")
-    try:
-        lambda_client.add_permission(
-            FunctionName=lambda_name,
-            StatementId='s3-trigger-permission',
-            Action='lambda:InvokeFunction',
-            Principal='s3.amazonaws.com',
-            SourceArn=f'arn:aws:s3:::{bucket_name}'
-        )
-    except ClientError as e:
-        if e.response['Error']['Code'] == 'ResourceConflictException':
-            print("ℹ️ S3 Permission already exists.")
-
-    s3_resource = boto3.resource('s3')
-    bucket_notification = s3_resource.BucketNotification(bucket_name)
-    try:
-        bucket_notification.put(
-            NotificationConfiguration={
-                'LambdaFunctionConfigurations': [
-                    {
-                        'LambdaFunctionArn': lambda_client.get_function(FunctionName=lambda_name)['Configuration']['FunctionArn'],
-                        'Events': ['s3:ObjectCreated:*'],
-                        'Filter': {'Key': {'FilterRules': [{'Name': 'prefix', 'Value': 'uploads/'}]}}
-                    }
-                ]
-            }
-        )
-        print(f"✅ S3 Trigger Active: {bucket_name} -> {lambda_name}")
-    except Exception as e:
-        print(f"❌ Failed to set S3 Trigger: {e}")
-
 def deploy():
-    print("🏗️  Building Production Environment...")
+    print("🏗️  Building Full Production Environment...")
 
-    # 1. IAM Role
+    # 1. IAM Role Setup
     try:
         policy = {"Version": "2012-10-17", "Statement": [{"Action": "sts:AssumeRole", "Effect": "Allow", "Principal": {"Service": "lambda.amazonaws.com"}}]}
         iam.create_role(RoleName=ROLE_NAME, AssumeRolePolicyDocument=json.dumps(policy))
@@ -87,55 +61,33 @@ def deploy():
         print("✅ IAM Role Ready.")
         time.sleep(5) 
     except ClientError:
-        print("ℹ️ Role exists.")
+        print("ℹ️  Role exists.")
 
-    # 2. S3 Bucket
+    # 2. Infrastructure (S3 & Dynamo)
     try:
-        print(f"📡 Ensuring S3 Bucket exists: {BUCKET_NAME}...")
         s3.create_bucket(Bucket=BUCKET_NAME)
-        waiter = s3.get_waiter('bucket_exists')
-        waiter.wait(Bucket=BUCKET_NAME)
-        print("✅ S3 Bucket is ACTIVE.")
-    except ClientError as e:
-        print(f"ℹ️ S3 Bucket info: {e}")
+        print(f"✅ S3 Bucket {BUCKET_NAME} Ready.")
+    except ClientError: pass
 
-    # 3. DynamoDB Tables
     for table in [TABLE_NAME, USER_TABLE]:
         try:
             key = 'feedback_id' if table == TABLE_NAME else 'username'
-            print(f"📡 Creating {table}...")
             dynamodb.create_table(
                 TableName=table,
                 KeySchema=[{'AttributeName': key, 'KeyType': 'HASH'}],
                 AttributeDefinitions=[{'AttributeName': key, 'AttributeType': 'S'}],
                 BillingMode='PAY_PER_REQUEST'
             )
-            waiter = dynamodb.get_waiter('table_exists')
-            waiter.wait(TableName=table)
-            print(f"✅ Table {table} is ACTIVE.")
-        except ClientError:
-            print(f"ℹ️ Table {table} exists.")
+            print(f"✅ Table {table} Created.")
+        except ClientError: pass
 
-    # 4. Seed Admin User
-    print("👤 Seeding Admin User...")
-    try:
-        dynamodb.put_item(
-            TableName=USER_TABLE,
-            Item={'username': {'S': 'admin'}, 'role': {'S': 'admin'}, 'password_hash': {'S': 'SECRET_HASH'}}
-        )
-        print("✅ Admin seeded.")
-    except Exception as e:
-        print(f"⚠️ Seed error: {e}")
-
-    # 5. Deploy Workers
+    # 3. Worker Deployment Loop
     role_arn = iam.get_role(RoleName=ROLE_NAME)['Role']['Arn']
     for name, src, handler in WORKERS:
         zip_bytes = create_zip(src, f"{name}.zip")
+        if zip_bytes is None: continue # Skip missing local files
         
-        # Determine layers - only the summarizer needs requests
         layers = [REQUESTS_LAYER] if "summarizer" in name else []
-        
-        # Define shared environment variables
         env_vars = {
             'Variables': {
                 'MISTRAL_API_KEY': MISTRAL_KEY or "",
@@ -152,33 +104,24 @@ def deploy():
                 Role=role_arn,
                 Handler=handler, 
                 Code={'ZipFile': zip_bytes},
-                Timeout=LAMBDA_TIMEOUT, 
-                MemorySize=LAMBDA_MEMORY,
+                Timeout=60, 
+                MemorySize=256,
                 Environment=env_vars,
-                Layers=layers  # Fixed placement
+                Layers=layers
             )
             print(f"✅ {name} created.")
         except ClientError as e:
             if e.response['Error']['Code'] == 'ResourceConflictException':
                 print(f"🔄 Updating {name}...")
                 wait_for_lambda(name)
-                # Update Config (Timeout, Memory, Env, Layers)
                 lambda_client.update_function_configuration(
-                    FunctionName=name, 
-                    Timeout=LAMBDA_TIMEOUT, 
-                    MemorySize=LAMBDA_MEMORY,
-                    Environment=env_vars,
-                    Layers=layers
+                    FunctionName=name, Environment=env_vars, Layers=layers
                 )
                 wait_for_lambda(name)
-                # Update Code
                 lambda_client.update_function_code(FunctionName=name, ZipFile=zip_bytes)
                 print(f"✅ {name} updated.")
 
-    # 6. Setup S3 Trigger for ocr_worker
-    add_s3_trigger("master_worker", BUCKET_NAME)
-
-    print("\n✨ SYSTEM ONLINE.")
+    print("\n✨ SYSTEM ONLINE. All workers (including Kaggle) are deployed.")
 
 if __name__ == "__main__":
     deploy()

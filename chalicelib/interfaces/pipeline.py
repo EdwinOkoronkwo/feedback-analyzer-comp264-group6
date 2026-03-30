@@ -15,6 +15,10 @@ class IAnalysisPipeline(ABC):
 
 class IPipelineBridge(ABC):
     @abstractmethod
-    def trigger_pipeline(self, payload: dict, file_obj=None) -> dict:
-        """Starts the processing chain (OCR -> Analysis -> Summary)."""
+    def trigger_pipeline(self, data, file=None):
+        pass
+
+    @abstractmethod
+    def trigger_dataset_ingestion(self, config):
+        """New method to handle batch dataset processing"""
         pass

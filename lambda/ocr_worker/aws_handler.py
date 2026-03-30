@@ -1,38 +1,35 @@
 import boto3
 import json
-import os
+import time
 
-# Initialize Clients
 textract = boto3.client('textract', region_name='us-east-1')
 s3 = boto3.client('s3', region_name='us-east-1')
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 lambda_client = boto3.client('lambda', region_name='us-east-1')
 
 def lambda_handler(event, context):
-    fid = 'unknown'
-    try:
-        # 1. Parse S3 Event
-        record = event['Records'][0]
-        bucket = record['s3']['bucket']['name']
-        full_key = record['s3']['object']['key'] 
-        
-        # Extract ID (e.g., "uploads/admin_123.jpg" -> "admin_123")
+    # 🎯 FIX: Priority ID Check
+    # Use the passed feedback_id first, otherwise fallback to filename
+    record = event['Records'][0]
+    bucket = record['s3']['bucket']['name']
+    full_key = record['s3']['object']['key'] 
+    
+    fid = event.get('feedback_id')
+    if not fid:
         filename = full_key.split('/')[-1]
         fid = filename.rsplit('.', 1)[0]
+
+    try:
         is_text_file = full_key.lower().endswith('.txt')
+        is_image = any(full_key.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg'])
 
-        print(f"📸 OCR Worker: Processing {fid} (Is Text: {is_text_file})")
-
+        print(f"📸 OCR Worker: {fid} | Image: {is_image}")
         full_text = ""
 
-        # 2. 🎯 THE BYPASS: If it's a .txt file, don't call Textract
         if is_text_file:
-            print(f"📄 Reading raw text from S3 for {fid}")
             response = s3.get_object(Bucket=bucket, Key=full_key)
             full_text = response['Body'].read().decode('utf-8')
-        else:
-            # AWS Textract: Extract Text from Images
-            print(f"🔍 Running Textract OCR for {fid}")
+        elif is_image:
             response = textract.detect_document_text(
                 Document={'S3Object': {'Bucket': bucket, 'Name': full_key}}
             )
@@ -42,16 +39,20 @@ def lambda_handler(event, context):
         if not full_text.strip():
             full_text = "No readable text found."
 
-        # 3. DynamoDB: Save Raw Text
-        dynamodb.Table('Analysis_OCR').put_item(Item={
-            'feedback_id': fid,          
-            'text': full_text,
-            'status': 'OCR_COMPLETED',
-            'timestamp': str(os.times()[4])
-        })
+        # Update DB
+        table = dynamodb.Table('Analysis_Summaries')
+        table.update_item(
+            Key={'feedback_id': fid},
+            UpdateExpression="SET #s = :stat, raw_text = :txt, #m = :msg",
+            ExpressionAttributeNames={'#s': 'status', '#m': 'master'},
+            ExpressionAttributeValues={
+                ':stat': 'OCR_COMPLETED',
+                ':txt': full_text,
+                ':msg': "OCR Complete. Sending to Analysis."
+            }
+        )
         
-        # 4. RELAY: Trigger Analysis Worker (Comprehend)
-        # 🚀 This ensures the "Baton Pass" continues for text inputs
+        # Invoke Analysis
         lambda_client.invoke(
             FunctionName='analysis_worker',
             InvocationType='Event',

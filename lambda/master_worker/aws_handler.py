@@ -18,57 +18,66 @@ def lambda_handler(event, context):
         
         fid = key.split('/')[-1].rsplit('.', 1)[0]
         file_ext = key.split('.')[-1].lower()
-        # ⏱️ Synthetic Lag: Let the user see the Master icon turn green
-        time.sleep(2)
+        
+        print(f"🎮 Master Worker: Routing {fid} (Type: {file_ext})")
 
-        print(f"🎮 Master Orchestrator: Processing {fid} (Type: {file_ext})")
-
-        # 2. 📝 LEAVE A FOOTPRINT: Update UI that Master has the baton
-        # This turns the 🎮 emoji green in your Streamlit UI
+        # 2. 📝 UI Status Update
         table = dynamodb.Table('Analysis_Summaries')
         table.update_item(
             Key={'feedback_id': fid},
             UpdateExpression="SET #m = :val, #st = :proc",
             ExpressionAttributeValues={
-                ':val': f"Master active. Routing {file_ext} path.",
+                ':val': f"Master active. Routing {file_ext} provider.",
                 ':proc': "PROCESSING"
             },
-            ExpressionAttributeNames={
-                '#m': 'master',
-                '#st': 'status'
-            }
+            ExpressionAttributeNames={'#m': 'master', '#st': 'status'}
         )
 
-        if file_ext == 'txt':
-            # PATH A: DIRECT TEXT
+        # --- MULTI-PROVIDER ROUTING ---
+
+        if file_ext == 'tfrecord':
+            # 📊 MULTI-PROVIDER LOGIC: NIST vs MNIST
+            is_nist = "nist" in key.lower()
+            dataset_type = "NIST_AUTHENTIC" if is_nist else "MNIST"
+            resolution = [128, 128] if is_nist else [28, 28]
+
+            print(f"✅ Master: {dataset_type} detected. Passing [ {resolution[0]}x{resolution[1]} ] to Analysis.")
+
+            # 🚀 THE BATON PASS: Standardizing the Batch Payload
+            lambda_client.invoke(
+                FunctionName='analysis_worker',
+                InvocationType='Event',
+                Payload=json.dumps({
+                    "feedback_id": fid,
+                    "is_batch": True,
+                    "dataset_type": dataset_type,
+                    "resolution": resolution,  # 🎯 CRITICAL: Tells the loader how to reshape
+                    "file_path": key,
+                    "bucket": bucket
+                })
+            )
+
+        elif file_ext in ['txt']:
+            # ✍️ PROVIDER: DIRECT TEXT
             response = s3_client.get_object(Bucket=bucket, Key=key)
             raw_text = response['Body'].read().decode('utf-8')
             
-            # Since we skip OCR, we mark 'text' here so UI knows input is ready
-            table.update_item(
-                Key={'feedback_id': fid},
-                UpdateExpression="SET #t = :txt",
-                ExpressionAttributeValues={':txt': raw_text},
-                ExpressionAttributeNames={'#t': 'text'}
-            )
-
-            print(f"🚀 Master: Text detected. Triggering Analysis...")
             lambda_client.invoke(
                 FunctionName='analysis_worker',
                 InvocationType='Event',
                 Payload=json.dumps({"feedback_id": fid, "text": raw_text})
             )
-        else:
-            # PATH B: IMAGE
-            print(f"🚀 Master: Image detected. Triggering OCR Worker...")
+
+        elif file_ext in ['jpg', 'jpeg', 'png']:
+            print(f"🚀 Master: Image detected. Routing to OCR...")
+            # 🎯 FIX: Ensure we pass the record so OCR worker doesn't crash
             lambda_client.invoke(
                 FunctionName='ocr_worker',
                 InvocationType='Event',
-                Payload=json.dumps(event)
+                Payload=json.dumps(event) # This works because event contains 'Records'
             )
-
         return {"status": "orchestrated", "feedback_id": fid}
 
     except Exception as e:
-        print(f"❌ Master Error: {str(e)}")
+        print(f"❌ Master Orchestration Error: {str(e)}")
         return {"status": "error", "message": str(e)}

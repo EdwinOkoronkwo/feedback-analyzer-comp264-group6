@@ -3,11 +3,13 @@ import uuid
 import time
 import boto3
 import os
+from chalicelib.ingestion.kag_loader import get_prepared_kag_batch
 from chalicelib.models.feedback import FeedbackModel
 from boto3.dynamodb.conditions import Attr
 
+import json
+        
 class FeedbackAnalysisPipeline:
-    # Add 'summarizer=None' to the end of the arguments list
     def __init__(self, ingestor, sanitizer, security, translator, analyzer, persistence, logger, s3_storage, summarizer=None):
         # 1. Dependencies
         self.ingestor = ingestor
@@ -18,15 +20,17 @@ class FeedbackAnalysisPipeline:
         self.persistence = persistence  
         self.logger = logger
         self.s3_storage = s3_storage
-        self.summarizer = summarizer # <--- Store the new summarizer component
+        self.summarizer = summarizer 
         
         # 2. Cloud Configuration
+        # Ensure we use the same naming convention everywhere
+        import boto3
         self.bucket = s3_storage.bucket_name
         self.region = "us-east-1" 
         self.dynamodb = boto3.resource('dynamodb', region_name=self.region)
-        self.s3_client = boto3.client('s3')
+        self.s3_client = boto3.client('s3', region_name=self.region)
+        self.lambda_client = boto3.client('lambda', region_name=self.region)
         
-        # Professional initialization log
         self.logger.log_event("PIPELINE", "INFO", "Pipeline Architecture Initialized")
 
     def run(self, raw_input: dict):
@@ -126,6 +130,133 @@ class FeedbackAnalysisPipeline:
         results["status"] = "TIMEOUT"
         yield 1.0, results
 
+    def trigger_kag_ingestion(self, base_path, folder_name="Email", limit=5):
+        """
+        KAG Trigger: Initiates the Full Chain (OCR -> Translate -> Sentiment -> Summary -> Speech).
+        """
+      
+        # 1. Prepare Batch from VMware Local Disk
+        samples = get_prepared_kag_batch(base_path, folder_name=folder_name, limit=limit)
+        
+        sample_ids = []
+        table = self.dynamodb.Table("Analysis_Summaries")
+        lambda_client = boto3.client('lambda', region_name=self.region)
+
+        for sample in samples:
+            fid = sample['feedback_id']
+            sample_ids.append(fid)
+            
+            # 2. Upload to S3 (The "Event" Source)
+            file_key = f"kaggle_tobacco/{folder_name}/{sample['filename']}"
+            self.s3_client.put_object(
+                Bucket=self.bucket,
+                Key=file_key,
+                Body=sample['image_bytes'],
+                Metadata={"feedback_id": fid}
+            )
+
+            # 3. Initialize DynamoDB with 'PROCESSING' state
+            table.put_item(Item={
+                'feedback_id': fid,
+                'status': 'PROCESSING',
+                'dataset_type': f'KAG_{folder_name.upper()}',
+                'timestamp': str(time.time()),
+                'master': '🚀 Full-Chain Pipeline Started'
+            })
+
+            # 4. 🎯 THE BATON PASS: Trigger the KAG Worker (Cloud Side)
+            # This worker will then trigger OCR -> Analysis -> Speech
+            relay_payload = {
+                "feedback_id": fid,
+                "bucket": self.bucket,
+                "image_url": f"s3://{self.bucket}/{file_key}",
+                "folder": folder_name
+            }
+            
+            try:
+                lambda_client.invoke(
+                    FunctionName='kag_worker', # Matches your cloud worker name
+                    InvocationType='Event',    # Asynchronous
+                    Payload=json.dumps(relay_payload).encode('utf-8')
+                )
+                print(f"📡 [KAG] Chain triggered for {fid}")
+            except Exception as e:
+                print(f"❌ [KAG] Lambda Trigger Failed for {fid}: {e}")
+
+        return {
+            "status": "success",
+            "sample_ids": sample_ids,
+            "message": f"Successfully initiated full-chain processing for {len(sample_ids)} docs."
+        }
+
+    def trigger_mnist_ingestion(self, digit="0", limit=3):
+        import tensorflow as tf
+        import os
+        import json
+        import time
+        import logging
+
+        logger = logging.getLogger("AWS_Pipeline")
+        TFRECORD_PATH = "/home/edwin/projects/feedback_analyzer/data/tfrecords/mnist_standard.tfrecord"
+        
+        print(f"🚀 [DEBUG] Starting MNIST Ingestion for digit: {digit}", flush=True)
+
+        feature_description = {
+            'image': tf.io.FixedLenFeature([], tf.string), 
+            'label': tf.io.FixedLenFeature([], tf.int64),
+            'filename': tf.io.FixedLenFeature([], tf.string),
+        }
+
+        try:
+            raw_dataset = tf.data.TFRecordDataset(TFRECORD_PATH)
+            parsed_dataset = raw_dataset.map(lambda x: tf.io.parse_single_example(x, feature_description))
+            
+            target_digit = int(digit)
+            digit_samples = parsed_dataset.filter(lambda x: x['label'] == target_digit).shuffle(100).take(limit)
+
+            batch_results = []
+            for i, record in enumerate(digit_samples):
+                fid = f"mnist_{digit}_{int(time.time())}_{i}"
+                img_bytes = record['image'].numpy() 
+                s3_key = f"datasets/mnist/{digit}/{fid}.png"
+
+                # 1. S3 Upload
+                print(f"📤 [DEBUG] Uploading to S3: {s3_key}...", flush=True)
+                self.s3_client.put_object(
+                    Bucket=self.bucket,
+                    Key=s3_key,
+                    Body=img_bytes,
+                    ContentType='image/png'
+                )
+
+                # 2. Lambda Trigger
+                relay_payload = {
+                    "feedback_id": fid,
+                    "label": str(digit),
+                    "image_url": f"s3://{self.bucket}/{s3_key}",
+                    "bucket": self.bucket
+                }
+
+                print(f"📡 [DEBUG] Triggering Lambda for {fid}...", flush=True)
+                self.lambda_client.invoke(
+                    FunctionName='mnist_ingestor_worker',
+                    InvocationType='Event',
+                    Payload=json.dumps(relay_payload).encode('utf-8')
+                )
+                batch_results.append(fid)
+                
+                # 🎯 NEW: Yield progress so the UI spinner stays active and informed
+                yield (i + 1) / limit, f"Uploaded {i+1}/{limit} samples..."
+
+            print(f"✅ [DEBUG] Batch Complete: {batch_results}", flush=True)
+            
+            # 🎯 CRITICAL CHANGE: Yield the final result dictionary at 1.0 (100%)
+            yield 1.0, {"status": "success", "sample_ids": batch_results}
+
+        except Exception as e:
+            print(f"❌ [DEBUG] Error: {str(e)}", flush=True)
+            yield 0.0, {"status": "error", "message": str(e)}
+            
     def get_user_feedback(self, username):
         """Used by HistoryUI to list previous analyses."""
         try:
