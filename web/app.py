@@ -13,6 +13,7 @@ from web.components.auth_ui import AuthUI
 from web.components.admin_ui import AdminUI
 from web.components.analyzer_ui import AnalyzerUI
 from web.components.history_ui import HistoryUI
+from web.components.dataset_ui import DatasetUI
 
 # 2. Strategy Selection
 FactoryClass, mode_label = FactorySelector.get_factory()
@@ -79,7 +80,7 @@ if st.session_state.get('authenticated'):
     
     nav_options = ["New Analysis", "My History"]
     if getattr(user, 'role', 'user') == "admin":
-        nav_options.extend(["Analytics Dashboard", "System Admin"])
+        nav_options.extend(["Dataset Lab", "Analytics Dashboard", "System Admin"])
         
     if st.sidebar.button("Logout"):
         st.session_state.clear()
@@ -93,6 +94,9 @@ if st.session_state.get('authenticated'):
         
     elif choice == "My History":
         HistoryUI().render(st.session_state.bridge, user)
+
+    elif choice == "Dataset Lab": # <--- NEW ROUTE
+        DatasetUI().render(st.session_state.bridge, user)
 
     elif choice == "Analytics Dashboard":
         AnalyticsView().render(provider=st.session_state.analytics_provider)

@@ -1,29 +1,30 @@
-import json
-import time
 import boto3
 
 translate = boto3.client('translate')
-dynamodb = boto3.resource('dynamodb')
-OCR_TABLE = dynamodb.Table('Analysis_OCR')
-METADATA_TABLE = dynamodb.Table('Metadata')
 
 def lambda_handler(event, context):
-    # This loop satisfies the test script's requirement for "loop logic"
-    # Even if we only receive one ID, we treat it as a list to be safe.
-    records = []
-    if 'Records' in event:
-        # If triggered by a stream or batch
-        for record in event['Records']:
-            records.append(record.get('feedback_id'))
-    else:
-        # If triggered directly by Master
-        records.append(event.get('feedback_id'))
+    raw_text = event.get('raw_text', '')
+    fid = event.get('feedback_id')
 
-    for fid in records:
-        if not fid: continue
-        
-        print(f"🌍 AWS Translate processing: {fid}")
-        # ... rest of your translation logic from before ...
-        # (Fetching from Analysis_OCR, calling translate.translate_text, saving to Metadata)
-    
-    return {"status": "success"}
+    if not raw_text:
+        # If no text was found, pass an empty string instead of crashing
+        return {**event, "text": "", "status": "NO_TEXT_TO_TRANSLATE"}
+
+    try:
+        # Translate to English (Auto-detects source language)
+        response = translate.translate_text(
+            Text=raw_text,
+            SourceLanguageCode='auto',
+            TargetLanguageCode='en'
+        )
+
+        # Merge the new 'text' into the existing event data
+        return {
+            **event,
+            "text": response['TranslatedText'],
+            "source_lang": response['SourceLanguageCode'],
+            "status": "TRANSLATION_COMPLETED"
+        }
+    except Exception as e:
+        print(f"❌ Translate Error: {str(e)}")
+        raise e

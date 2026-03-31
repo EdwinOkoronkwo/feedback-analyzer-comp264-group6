@@ -50,16 +50,16 @@ class AWSPipelineBridge(IPipelineBridge):
             fid = f"mnist_full_{int(time.time())}_{sample['index']}"
             s3_key = f"datasets/mnist/images/{fid}.png"
 
-            logger.info(f"[PIPELINE] 📤 UPLOAD: Sending {fid} to S3 (Label: {sample['label']})")
-
-            # 1. Upload PNG bytes to S3
+            # ✅ FIX: Added Metadata so the Master Worker knows this ID
             self.s3.put_object(
                 Bucket=self.bucket, 
                 Key=s3_key, 
                 Body=sample['image_bytes'],
-                ContentType='image/png'
+                ContentType='image/png',
+                Metadata={
+                    'feedback-id': fid  # The "Sticky Note"
+                }
             )
-
             # 2. Invoke MNIST Cloud Worker (mnist_ingestor_worker)
             relay_payload = {
                 "feedback_id": fid,
@@ -125,7 +125,10 @@ class AWSPipelineBridge(IPipelineBridge):
                     Bucket=self.bucket,
                     Key=s3_key,
                     Body=sample['image_bytes'],
-                    ContentType=content_type
+                    ContentType=content_type,
+                    Metadata={
+                        'feedback-id': fid  # Aligns S3 with Streamlit's Poll ID
+                    }
                 )
                 print(f"✅ [S3 CONFIRMED] File uploaded. ETag: {response.get('ETag')}")
             except Exception as e:
@@ -144,27 +147,19 @@ class AWSPipelineBridge(IPipelineBridge):
                 "metadata": sample['metadata']
             }
 
-            print(f"🚀 [BRIDGE] Invoking KAG Worker for {fid}...")
-            try:
-                # Switching to RequestResponse so we see errors in the VMware console
-                relay_response = self.lambda_client.invoke(
-                    FunctionName='kag_worker',
-                    InvocationType='RequestResponse',
-                    Payload=json.dumps(relay_payload).encode('utf-8')
-                )
-                
-                # Parse the worker's internal response
-                result = json.loads(relay_response['Payload'].read().decode())
-                print(f"☁️ [CLOUD RESPONSE] {result}")
-                
-                if result.get('status') == 'success':
-                    batch_results.append(fid)
-                else:
-                    print(f"⚠️ [WORKER WARNING] Worker accepted but reported: {result.get('message')}")
+            # 🚀 CHANGE THIS: Back to 'Event' (Asynchronous)
+        print(f"🚀 [BRIDGE] Invoking KAG Worker for {fid}...")
+        try:
+            self.lambda_client.invoke(
+                FunctionName='kag_worker',
+                InvocationType='Event', # <--- THIS IS THE FIX
+                Payload=json.dumps(relay_payload).encode('utf-8')
+            )
+            # Since we aren't waiting for a response, assume success and add to batch
+            batch_results.append(fid) 
 
-            except Exception as e:
-                print(f"❌ [LAMBDA ERROR] Could not reach kag_worker: {str(e)}")
-
+        except Exception as e:
+            print(f"❌ [LAMBDA ERROR] Could not reach kag_worker: {str(e)}")
             time.sleep(1.0) # Rate limiting
 
         return {

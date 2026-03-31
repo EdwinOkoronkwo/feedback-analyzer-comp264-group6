@@ -1,83 +1,78 @@
-import boto3
 import json
+import boto3
 import os
+import urllib.parse
 import time
 
 # Initialize Clients
-lambda_client = boto3.client('lambda')
 s3_client = boto3.client('s3')
-dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+sfn = boto3.client('stepfunctions')
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('Analysis_Summaries')
 
 def lambda_handler(event, context):
-    fid = 'unknown'
+    feedback_id = "UNKNOWN" 
     try:
-        # 1. Extract File Info
+        # 1. Parse Event
         record = event['Records'][0]
         bucket = record['s3']['bucket']['name']
-        key = record['s3']['object']['key']
+        key = urllib.parse.unquote_plus(record['s3']['object']['key'])
         
-        fid = key.split('/')[-1].rsplit('.', 1)[0]
-        file_ext = key.split('.')[-1].lower()
-        
-        print(f"🎮 Master Worker: Routing {fid} (Type: {file_ext})")
+        # 2. Extract Metadata Handshake
+        head = s3_client.head_object(Bucket=bucket, Key=key)
+        metadata = head.get('Metadata', {})
+        feedback_id = metadata.get('feedback-id') or metadata.get('feedback_id')
 
-        # 2. 📝 UI Status Update
-        table = dynamodb.Table('Analysis_Summaries')
+        if not feedback_id:
+            print(f"❌ METADATA ERROR: No ID for {key}")
+            return {"statusCode": 400}
+
+        # 3. 📝 LOG START
         table.update_item(
-            Key={'feedback_id': fid},
-            UpdateExpression="SET #m = :val, #st = :proc",
+            Key={'feedback_id': feedback_id},
+            UpdateExpression="SET #s = :s, master_log = :m, timestamp = :t",
+            ExpressionAttributeNames={'#s': 'status'},
             ExpressionAttributeValues={
-                ':val': f"Master active. Routing {file_ext} provider.",
-                ':proc': "PROCESSING"
-            },
-            ExpressionAttributeNames={'#m': 'master', '#st': 'status'}
+                ':s': 'SFN_STARTING',
+                ':m': f"Master detected file. Attempting SFN trigger for {key}...",
+                ':t': str(time.time())
+            }
         )
 
-        # --- MULTI-PROVIDER ROUTING ---
+        # 4. 🚀 TRIGGER STEP FUNCTION
+        input_payload = {
+            "feedback_id": feedback_id,
+            "bucket": bucket,
+            "key": key
+        }
+        
+        response = sfn.start_execution(
+            stateMachineArn=os.environ['STATE_MACHINE_ARN'],
+            input=json.dumps(input_payload)
+        )
+        
+        # 5. LOG SUCCESS
+        table.update_item(
+            Key={'feedback_id': feedback_id},
+            UpdateExpression="SET #s = :s, master_log = :m, execution_arn = :arn",
+            ExpressionAttributeNames={'#s': 'status'},
+            ExpressionAttributeValues={
+                ':s': 'SFN_RUNNING',
+                ':m': "🚀 Step Function started successfully.",
+                ':arn': response['executionArn']
+            }
+        )
 
-        if file_ext == 'tfrecord':
-            # 📊 MULTI-PROVIDER LOGIC: NIST vs MNIST
-            is_nist = "nist" in key.lower()
-            dataset_type = "NIST_AUTHENTIC" if is_nist else "MNIST"
-            resolution = [128, 128] if is_nist else [28, 28]
-
-            print(f"✅ Master: {dataset_type} detected. Passing [ {resolution[0]}x{resolution[1]} ] to Analysis.")
-
-            # 🚀 THE BATON PASS: Standardizing the Batch Payload
-            lambda_client.invoke(
-                FunctionName='analysis_worker',
-                InvocationType='Event',
-                Payload=json.dumps({
-                    "feedback_id": fid,
-                    "is_batch": True,
-                    "dataset_type": dataset_type,
-                    "resolution": resolution,  # 🎯 CRITICAL: Tells the loader how to reshape
-                    "file_path": key,
-                    "bucket": bucket
-                })
-            )
-
-        elif file_ext in ['txt']:
-            # ✍️ PROVIDER: DIRECT TEXT
-            response = s3_client.get_object(Bucket=bucket, Key=key)
-            raw_text = response['Body'].read().decode('utf-8')
-            
-            lambda_client.invoke(
-                FunctionName='analysis_worker',
-                InvocationType='Event',
-                Payload=json.dumps({"feedback_id": fid, "text": raw_text})
-            )
-
-        elif file_ext in ['jpg', 'jpeg', 'png']:
-            print(f"🚀 Master: Image detected. Routing to OCR...")
-            # 🎯 FIX: Ensure we pass the record so OCR worker doesn't crash
-            lambda_client.invoke(
-                FunctionName='ocr_worker',
-                InvocationType='Event',
-                Payload=json.dumps(event) # This works because event contains 'Records'
-            )
-        return {"status": "orchestrated", "feedback_id": fid}
+        return {"statusCode": 200}
 
     except Exception as e:
-        print(f"❌ Master Orchestration Error: {str(e)}")
-        return {"status": "error", "message": str(e)}
+        error_trace = f"🛑 MASTER CRASH: {str(e)}"
+        print(error_trace)
+        if feedback_id != "UNKNOWN":
+            table.update_item(
+                Key={'feedback_id': feedback_id},
+                UpdateExpression="SET #s = :s, master_log = :m",
+                ExpressionAttributeNames={'#s': 'status'},
+                ExpressionAttributeValues={':s': 'FAILED', ':m': error_trace}
+            )
+        raise e

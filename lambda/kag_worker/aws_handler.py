@@ -1,58 +1,86 @@
 import json
 import boto3
 import time
+import os
 
-s3_client = boto3.client('s3')
+# Initialize Resource
 dynamodb = boto3.resource('dynamodb')
-lambda_client = boto3.client('lambda')
+table = dynamodb.Table('Analysis_Summaries')
 
 def lambda_handler(event, context):
-    fid = event.get('feedback_id', f"kag_batch_{int(time.time())}")
-    bucket = event.get('bucket', 'comp264-edwin-1772030214')
-    image_url = event.get('image_url', '')
-    folder = event.get('folder', 'Unknown')
+    """
+    KAG Worker: Hard-Coded for Error Visibility.
+    If any key is missing, it kills the process and updates DynamoDB to FAILED.
+    """
+    # 1. 🔍 STRICT Parsing (No Fallbacks)
+    fid = event.get('feedback_id') or event.get('id')
+    bucket = event.get('bucket')
+    image_url = event.get('image_url')
+    s3_key = event.get('key')
+    folder = event.get('folder')
+
+    # 2. 🚨 CRITICAL ERROR: No ID
+    if not fid:
+        # We can't even update DynamoDB if we don't have the ID
+        raise KeyError("FATAL: No 'feedback_id' or 'id' found in event payload. Chain Aborted.")
+
+    # 3. 🚨 CRITICAL ERROR: S3 Path Failure
+    if not s3_key and image_url:
+        # Robust extraction attempt
+        if "s3://" in image_url:
+            path_stripped = image_url.replace("s3://", "")
+            parts = path_stripped.split("/", 1)
+            if len(parts) > 1:
+                s3_key = parts[1]
     
-    # Extract the clean S3 key from the URL
-    s3_key = image_url.replace(f"s3://{bucket}/", "")
+    # Check if we still have nothing
+    if not s3_key or not bucket:
+        error_msg = f"MISSING_LOCATION: Bucket ({bucket}) or Key ({s3_key}) is null. URL provided: {image_url}"
+        table.update_item(
+            Key={'feedback_id': fid},
+            UpdateExpression="SET #s = :s, master_log = :m, error_msg = :e",
+            ExpressionAttributeNames={'#s': 'status'},
+            ExpressionAttributeValues={
+                ':s': 'FAILED',
+                ':m': 'KAG Worker stopped: S3 Location error.',
+                ':e': error_msg
+            }
+        )
+        raise ValueError(error_msg)
 
     try:
-        print(f"🏛️ KAG Worker: Processing {fid}")
+        print(f"🏛️ KAG Worker: Processing {fid} for {folder}")
 
-        # 1. Seed DynamoDB
-        table = dynamodb.Table('Analysis_Summaries')
+        # 4. 📝 SEED DYNAMODB
+        # We only do this if the data is valid
         table.put_item(Item={
             'feedback_id': fid,
-            'status': 'PROCESSING_KAG',
-            'dataset_type': f'KAG_{folder.upper()}',
-            'image_path': image_url,
+            'status': 'PROCESSING', 
+            'dataset_type': f'KAG_{str(folder).upper()}',
+            'image_path': f"s3://{bucket}/{s3_key}",
             'timestamp': str(time.time()),
-            'master': f"KAG Worker initialized {folder} document."
+            'master_log': f"KAG Worker validated {fid}. Handoff to OCR initiated."
         })
 
-        # 2. Determine file type
-        file_ext = s3_key.split('.')[-1].lower()
-
-        # 🎯 RELAY LOGIC: Standardize the payload for the ocr_worker
-        relay_payload = {
+        # 5. 🚀 RETURN FOR STEP FUNCTION
+        # If any of these are missing, the Step Function ASL will fail on the next step
+        return {
             "feedback_id": fid,
-            "Records": [{
-                "s3": {
-                    "bucket": {"name": bucket},
-                    "object": {"key": s3_key}
-                }
-            }]
+            "bucket": bucket,
+            "key": s3_key,
+            "folder": folder,
+            "status": "READY_FOR_OCR"
         }
 
-        if file_ext in ['jpg', 'jpeg', 'png', 'txt']:
-            print(f"🚀 Relaying {fid} to OCR Worker...")
-            lambda_client.invoke(
-                FunctionName='ocr_worker',
-                InvocationType='Event',
-                Payload=json.dumps(relay_payload).encode('utf-8')
-            )
-        
-        return {"status": "success", "id": fid}
-
     except Exception as e:
-        print(f"🛑 [FATAL ERROR] {str(e)}")
-        return {"status": "error", "message": str(e)}
+        error_trace = f"🛑 [KAG EXECUTION ERROR] {str(e)}"
+        table.update_item(
+            Key={'feedback_id': fid},
+            UpdateExpression="SET #s = :s, master_log = :m",
+            ExpressionAttributeNames={'#s': 'status'},
+            ExpressionAttributeValues={
+                ':s': 'FAILED', 
+                ':m': error_trace
+            }
+        )
+        raise e
