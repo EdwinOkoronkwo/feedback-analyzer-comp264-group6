@@ -1,51 +1,65 @@
 import os
+import json
 import time
 import pytesseract
 from PIL import Image
+import requests
+from scripts.db_config import get_dynamodb_resource
+
+# Initialize Local DynamoDB
+dynamodb = get_dynamodb_resource()
+table = dynamodb.Table('Summaries') 
 
 def lambda_handler(event, context=None):
     """
-    Local KAG Worker: Process Kaggle Tobacco documents entirely on the local machine.
-    Triggered by: LocalPipelineBridge
+    🏛️ TESSERACT WORKER: 
+    Local OCR extraction and relay to Mistral AI.
     """
-    base_path = event.get('base_path')
+    fid = event.get('feedback_id')
+    file_path = event.get('file_path')
     folder = event.get('folder', 'Email')
-    limit = event.get('limit', 5)
     
-    target_dir = os.path.join(base_path, folder)
-    results = []
+    if not file_path or not os.path.exists(file_path):
+        print(f"❌ [KAG] Path Error: {file_path}")
+        return {"status": "error", "message": f"Invalid path: {file_path}"}
 
-    print(f"🏠 [LOCAL KAG WORKER] Scanning: {target_dir}")
+    print(f"🧐 [KAG] Processing TESSERACT OCR for ID: {fid}")
+    
+    try:
+        # 1. Local Tesseract OCR
+        # Opening the image and extracting text string
+        text = pytesseract.image_to_string(Image.open(file_path)).strip()
 
-    if not os.path.exists(target_dir):
-        return {"status": "error", "message": f"Path not found: {target_dir}"}
+        # 🎯 SAFETY: If Tesseract returns nothing, we send a placeholder 
+        # so the Summary Worker (Mistral) doesn't "Skip" it.
+        if not text:
+            print(f"⚠️ [KAG] Tesseract found no text for {fid}. Sending fallback.")
+            text = f"Document ID: {fid} - OCR could not extract text from this image."
 
-    # 1. Get local files
-    files = [f for f in os.listdir(target_dir) if f.endswith(('.jpg', '.jpeg'))][:limit]
+        # 2. 💾 SEED THE DATABASE
+        table.put_item(Item={
+            'feedback_id': fid,
+            'status': 'OCR_COMPLETE',
+            'text': text,
+            'category': folder,
+            'processed_at': str(time.time()),
+            'engine': 'tesseract_local'
+        })
 
-    for filename in files:
-        file_path = os.path.join(target_dir, filename)
-        fid = f"local_kag_{int(time.time())}_{filename}"
-
+        # 3. 🚀 RELAY TO SUMMARY WORKER (Mistral)
+        # This keeps the automation moving to the AI step
+        print(f"🔗 [KAG] Relaying {fid} to AI Worker...")
         try:
-            # 2. Local OCR (Replacing Textract)
-            print(f"🔍 [OCR] Processing {filename}...")
-            raw_text = pytesseract.image_to_string(Image.open(file_path))
+            requests.post(
+                "http://localhost:5001/process-summary", 
+                json={"body": {"feedback_id": fid, "text": text}},
+                timeout=0.1 
+            )
+        except requests.exceptions.ReadTimeout:
+            pass 
 
-            # 3. Simulate Analysis (Local Logic)
-            summary = f"Local Analysis of {filename}: Detected {len(raw_text)} characters."
-            
-            results.append({
-                "feedback_id": fid,
-                "status": "COMPLETED",
-                "raw_text": raw_text[:200] + "...", # Preview
-                "summary": summary
-            })
-        except Exception as e:
-            print(f"❌ Error processing {filename}: {e}")
+        return {"status": "success", "id": fid}
 
-    return {
-        "status": "success",
-        "processed_count": len(results),
-        "results": results
-    }
+    except Exception as e:
+        print(f"🔥 [KAG-ERROR]: {str(e)}")
+        return {"status": "error", "msg": str(e)}

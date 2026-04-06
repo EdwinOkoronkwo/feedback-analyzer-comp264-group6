@@ -1159,3 +1159,414 @@ Invalid length for parameter Text, value: 0, valid min length: 1
 2026-03-27 00:36:50,739 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
 2026-03-27 00:37:09,074 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_495134bd saved.
 2026-03-27 00:37:09,093 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-03-30 20:13:20,775 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:13:25,287 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:13:29,496 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:15:55,270 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:15:58,379 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:16:01,736 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:18:49,014 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:18:51,031 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:18:54,832 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:22:19,240 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:22:22,853 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:23:42,210 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:23:46,176 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:25:39,390 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:25:41,441 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:25:44,716 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:29:25,452 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:29:28,625 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:29:32,869 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:33:01,924 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:33:06,289 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:33:10,099 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-03-30 20:44:42,027 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:44:44,447 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-03-30 20:44:47,853 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-01 22:40:25,896 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-01 22:40:35,753 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 07:14:05,250 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:14:17,360 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:14:23,791 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:14:32,843 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 07:19:05,780 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:19:10,611 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:19:14,678 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 07:38:18,654 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:38:20,615 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:38:26,205 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 07:42:27,592 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:42:31,400 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:42:34,899 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 07:47:16,435 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:47:21,027 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:47:24,099 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 07:52:00,136 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 07:52:09,642 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:03:57,668 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:04:02,216 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:18:10,533 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:18:13,964 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:21:34,736 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:21:39,251 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:24:42,313 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:24:46,042 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:25:55,990 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:26:01,781 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:26:24,565 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:26:28,861 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-02 08:27:14,157 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-02 08:27:27,512 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:03:08,351 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:03:08,354 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:03:22,734 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:06:55,431 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:07:00,982 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:07:06,607 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:08:21,309 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:08:21,557 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:08:27,089 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:17:51,031 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:17:59,815 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:30:01,758 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:30:02,200 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:30:07,306 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:30:10,847 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:31:41,389 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:31:47,902 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:32:33,394 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:32:36,945 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:32:41,701 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:35:07,201 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:35:13,373 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:37:08,092 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:37:09,465 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:37:13,000 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:40:52,957 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:40:53,335 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:40:58,174 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:41:01,851 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:44:39,009 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:44:43,650 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:44:47,449 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:46:33,868 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:46:34,183 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:46:46,598 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:46:49,975 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 14:53:46,509 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 14:53:49,584 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:00:37,663 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:00:40,088 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:12:31,249 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:12:37,299 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:12:46,401 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 15:14:05,424 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:14:10,089 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:14:16,386 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 15:17:49,117 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:17:53,595 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:17:59,204 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 15:18:17,200 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_a4f8cc4e saved.
+2026-04-05 15:18:17,224 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 15:18:39,062 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:18:47,599 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 15:19:50,624 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 15:20:16,575 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_f60f1a65 saved.
+2026-04-05 15:20:16,587 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 15:20:54,320 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_6a0c35c3 saved.
+2026-04-05 15:20:54,333 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 15:33:53,362 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:33:57,013 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:34:03,175 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 15:34:26,726 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_9984c7bf saved.
+2026-04-05 15:34:26,746 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 15:40:06,057 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 15:40:12,879 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:05:51,480 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:05:57,816 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:06:19,957 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_110b6584 saved.
+2026-04-05 17:06:19,979 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 17:07:27,329 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:07:33,835 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:11:43,920 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:11:44,297 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:11:45,563 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:11:49,155 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:13:49,244 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:13:51,625 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:13:56,840 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:19:04,605 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:19:06,546 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:19:09,684 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:22:56,480 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:27:16,841 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:27:36,206 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_b105e7dd saved.
+2026-04-05 17:27:36,220 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 17:29:24,996 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:29:26,857 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-05 17:29:28,795 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:29:31,448 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:31:34,833 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 17:33:41,057 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:19:09,529 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:24:37,117 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:28:57,757 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:32:01,513 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:35:56,188 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:37:55,623 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:42:45,303 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:48:16,015 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:48:59,402 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:50:14,336 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:54:09,153 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 20:58:14,636 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:01:52,850 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:07:09,101 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:11:21,876 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:13:43,438 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:17:29,275 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:18:02,596 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:18:15,491 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_797cf0c2 saved.
+2026-04-05 21:18:15,517 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 21:20:29,873 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:26:37,275 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:28:38,481 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:30:44,196 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:31:21,876 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_ec7a93ae saved.
+2026-04-05 21:31:21,891 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-05 21:34:37,548 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:39:23,306 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 21:41:14,939 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 22:13:21,743 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 22:18:38,265 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 22:44:22,831 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 22:46:48,881 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 22:51:23,331 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 22:57:50,431 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:02:52,225 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:04:02,960 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:09:39,997 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:16:04,269 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:18:16,243 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:22:34,205 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:30:46,422 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:34:28,056 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:47:00,437 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-05 23:55:20,304 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:03:26,667 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:11:56,098 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:14:30,141 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:14:45,227 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_236050ba saved.
+2026-04-06 00:14:45,245 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-06 00:20:41,974 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_8e7d6452 saved.
+2026-04-06 00:20:41,983 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-06 00:22:18,066 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:24:50,896 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:28:10,411 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:31:16,966 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:33:15,343 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:37:53,135 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:49:26,870 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:51:19,162 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 00:58:29,572 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_66c25759 saved.
+2026-04-06 00:58:29,585 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.
+2026-04-06 01:02:32,068 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 01:08:46,335 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 01:14:56,064 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 01:16:44,797 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 01:18:02,741 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:19:17,973 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:19:22,092 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:21:45,121 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:22:09,119 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:27:58,494 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:28:03,563 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:30:23,913 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:30:28,818 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:32:42,097 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:33:20,765 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:38:51,929 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:38:56,172 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:41:29,446 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:41:37,776 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:45:02,005 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:45:07,220 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:52:30,678 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:52:35,524 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:52:39,668 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:54:40,283 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:54:48,529 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:55:32,541 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:55:33,945 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:55:37,585 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:58:39,377 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:58:40,280 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 09:58:44,881 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 09:58:54,016 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:54,209 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:54,389 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:54,587 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:54,800 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:54,981 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:58,453 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:58,645 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:58,833 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:59,022 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:59,202 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:58:59,380 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:02,900 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:03,082 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:03,259 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:03,438 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:03,622 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:03,802 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:07,334 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:07,522 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:07,711 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:07,899 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:08,082 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:08,274 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:11,752 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:11,944 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:12,120 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:12,311 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:12,489 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:12,675 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:16,154 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:16,342 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:16,521 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:16,701 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:16,891 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:17,083 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:20,550 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:20,734 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:20,934 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:21,125 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:21,313 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 09:59:21,500 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:04:07,230 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:04:08,141 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:04:09,421 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:04:13,569 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 10:06:14,185 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:06:15,525 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:06:19,924 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 10:06:27,568 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:27,752 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:27,932 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:28,114 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:28,295 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:28,486 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:31,974 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:32,163 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:32,343 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:32,529 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:32,713 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:32,907 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:36,407 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:36,597 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:36,778 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:36,962 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:37,153 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:37,332 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:40,809 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:41,003 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:41,199 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:41,394 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:41,584 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:41,763 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:45,256 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:45,439 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:45,624 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:45,806 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:45,987 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:46,162 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:49,641 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:49,826 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:50,006 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:50,192 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:50,388 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:50,563 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:54,033 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:54,224 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:54,404 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:54,585 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:54,767 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:54,945 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:58,414 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:58,597 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:58,784 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:58,973 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:59,165 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:06:59,351 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:02,806 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:02,985 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:03,168 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:03,358 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:03,544 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:03,727 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:07,196 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:07,375 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:07,566 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:07,765 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:07,946 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:08,125 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:11,634 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:11,832 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:12,025 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:12,205 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:12,392 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:12,576 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:16,075 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:16,252 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:16,442 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:16,634 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:16,814 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:17,006 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:20,501 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:20,684 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:20,863 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:21,054 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:21,243 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:21,422 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:24,951 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:25,149 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:25,338 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:25,511 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:25,703 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:25,884 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:29,341 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:29,536 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:29,721 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:29,916 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:30,094 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:30,278 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:33,778 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:33,963 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:34,150 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:34,353 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:34,542 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:34,722 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:38,305 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:38,496 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:38,672 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:38,856 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:39,047 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:39,249 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:42,744 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:42,927 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:43,104 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:43,283 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:43,463 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:07:43,642 - AWS_Pipeline - ERROR - [DB_POLLING] ERROR: Error: An error occurred (ResourceNotFoundException) when calling the GetItem operation: Requested resource not found
+2026-04-06 10:08:09,389 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:08:10,324 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:08:14,510 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 10:19:30,011 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:21:01,105 - AWS_Pipeline - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 10:25:36,527 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:27:01,504 - AWS_Pipeline - INFO - [PIPELINE] INFO: Pipeline Architecture Initialized
+2026-04-06 10:27:12,338 - VMware-Local-Stack - INFO - [AUTH_LOGIN_SUCCESS] INFO: User admin logged in.
+2026-04-06 10:27:32,590 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Metadata admin_457bad9c saved.
+2026-04-06 10:27:32,604 - VMware-Local-Stack - INFO - [DATABASE] INFO: Local Summary saved successfully.

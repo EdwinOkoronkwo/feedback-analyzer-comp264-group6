@@ -4,7 +4,7 @@ from chalicelib.models import SummaryModel
 class LocalSummaryRepository(BaseDynamoRepository):
     def __init__(self, db_resource, logger=None):
         # CHANGE "Summaries" TO "Analysis_Summaries"
-        super().__init__("Analysis_Summaries", db_resource, logger)
+        super().__init__("Summaries", db_resource, logger)
 
     def get_all_feedback(self):
         """Scans local DynamoDB and returns items sorted by timestamp."""

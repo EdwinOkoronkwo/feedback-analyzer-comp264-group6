@@ -4,6 +4,7 @@ from chalicelib.sanitizer.feedback_sanitizer import FeedbackSanitizer
 from chalicelib.security.simple_data_protector import SimpleDataProtector
 from implementations.aws.pipeline import FeedbackAnalysisPipeline
 # Ensure settings is used or removed if not needed
+from implementations.aws.providers.summaries import AWSSummaryProvider
 from web.config import settings
 
 # --- Specialized AWS Implementation Imports ---
@@ -94,3 +95,13 @@ class AWSPipelineFactory:
         provider = AthenaAnalyticsProvider(region=AWS_REGION, workgroup=workgroup)
         
         return provider, workgroup
+
+    @staticmethod
+    def get_summaries_layer():
+        from implementations.aws.providers.summaries import AWSSummaryProvider
+        
+        # This pulls 'Analysis_Summaries' from the .env we just fixed
+        table_name = os.getenv("SUMMARIES_TABLE", "Analysis_Summaries")
+        region = os.getenv("AWS_REGION", "us-east-1")
+        
+        return AWSSummaryProvider(region=region, table_name=table_name)

@@ -5,6 +5,8 @@ from PIL import Image
 import boto3
 from boto3.dynamodb.conditions import Attr
 import pytesseract
+
+from chalicelib.ingestion.kag_loader import get_prepared_kag_batch
 pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 from datetime import datetime
 from gtts import gTTS
@@ -29,7 +31,7 @@ class LocalPipelineOrchestrator:
         self.sanitizer = sanitizer
         self.security = security
 
-    def run(self, payload: dict):
+    def trigger_pipeline(self, payload: dict):
         import logging
         logging.basicConfig(level=logging.INFO)
         logger = logging.getLogger("VMware-Pipeline")
@@ -188,3 +190,68 @@ class LocalPipelineOrchestrator:
         except Exception as e:
             print(f"⚠️ [AUDIO ERROR]: {e}", flush=True)
             return "" # Return empty string so the pipeline can still finish without audio
+
+    def trigger_kag_ingestion(self, base_path, folder_name="Email", limit=3):
+        """
+        Bridge: Dispatches local KAG files to the Worker API.
+        """
+        import requests
+        from chalicelib.ingestion.kag_loader import get_prepared_kag_batch
+        
+        # 1. Get the list of files (Absolute Paths)
+        # Ensure get_prepared_kag_batch returns: {'feedback_id': '...', 'file_path': '...'}
+        samples = get_prepared_kag_batch(base_path, folder_name=folder_name, limit=limit)
+        
+        dispatched_ids = []
+
+        print(f"🚀 [BRIDGE] Starting Ingestion for {len(samples)} samples...")
+
+        for sample in samples:
+            payload = {
+                "feedback_id": sample['feedback_id'],
+                "file_path": sample['file_path'], # 🎯 CRITICAL: This is the absolute path
+                "folder": folder_name
+            }
+
+            try:
+                # 2. Dispatch to KAG Worker
+                # We use a short timeout because the KAG worker returns 200 
+                # as soon as it starts the OCR/Relay process.
+                response = requests.post(
+                    "http://localhost:5001/process-kag", 
+                    json=payload, 
+                    timeout=5
+                )
+                
+                if response.status_code == 200:
+                    print(f"✅ [BRIDGE] Dispatched: {sample['feedback_id']}")
+                    dispatched_ids.append(sample['feedback_id'])
+                else:
+                    print(f"⚠️ [BRIDGE] Worker refused {sample['feedback_id']}: {response.text}")
+
+            except Exception as e:
+                print(f"❌ [BRIDGE-ERROR] Failed to dispatch {sample['feedback_id']}: {e}")
+
+        return {
+            "status": "DISPATCHED",
+            "count": len(dispatched_ids),
+            "ids": dispatched_ids
+        }
+
+    def _get_table_data(self, table_name, feedback_id):
+        """
+        Helper to fetch a single record from local DynamoDB.
+        Used by BatchTracker to show live progress.
+        """
+        try:
+            # Connect to your persistence layer's table
+            # Adjust 'self.persistence.summary_service.repo.table' 
+            # to match how your Bridge accesses the DynamoDB resource
+            table = self.persistence.summary_service.repo.table
+            
+            response = table.get_item(Key={'feedback_id': feedback_id})
+            return response.get('Item', {})
+            
+        except Exception as e:
+            print(f"❌ [BRIDGE] Error fetching status for {feedback_id}: {e}")
+            return {}

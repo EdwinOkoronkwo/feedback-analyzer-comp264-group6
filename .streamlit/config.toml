@@ -5,3 +5,5 @@ backgroundColor = "#0f172a"      # Deep Slate Blue (Ocean base)
 secondaryBackgroundColor = "#1e293b" # Slightly lighter blue for sidebars/widgets
 textColor = "#f8fafc"            # Off-white for readability
 font = "sans serif"
+[server]
+enableStaticServing = true

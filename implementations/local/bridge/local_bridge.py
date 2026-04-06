@@ -1,9 +1,12 @@
+import time
 from flask import Flask, request, jsonify
 import os
+import requests
 import sys
 import importlib.util
 import pytesseract
 from PIL import Image
+from chalicelib.ingestion.kag_loader import get_prepared_kag_batch
 from chalicelib.interfaces.pipeline import IPipelineBridge
 
 class LocalPipelineBridge(IPipelineBridge):
@@ -27,57 +30,57 @@ class LocalPipelineBridge(IPipelineBridge):
         spec.loader.exec_module(module)
         return module
 
-    def _load_all_workers(self):
-        """Standardized worker list including the new kag_worker."""
-        worker_list = ["ocr", "summary", "analysis", "speech", "mnist_ingestor", "kag"]
-        loaded_workers = {}
+    def _import_worker(self, worker_name):
+        """Loads the worker with a cache-bust to ensure we don't get 'Ghost Generators'."""
+        path = os.path.join(self.project_root, f"lambda/{worker_name}_worker/handler.py")
         
-        for w in worker_list:
-            try:
-                loaded_workers[w] = self._import_worker(w)
-                print(f"✅ Loaded {w} worker.")
-            except Exception as e:
-                print(f"⚠️ Skipping {w} worker due to error: {e}")
-        
-        return loaded_workers
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"Worker file not found at {path}")
 
-    def trigger_kag_ingestion(self, base_path, folder_name="Email", limit=5):
-        """
-        Local entry point for Kaggle Tobacco Ingestion.
-        Mimics the cloud bridge but calls the local kag_worker/handler.py.
-        """
-        print(f"🌉 Bridge: Routing to Local KAG Worker ({folder_name})...")
-        
-        worker = self.workers.get("kag")
-        if not worker:
-            return {"status": "error", "message": "KAG worker is not available locally."}
+        # 🎯 CACHE BUST: Remove the old version from memory if it exists
+        module_name = f"{worker_name}_worker"
+        if module_name in sys.modules:
+            del sys.modules[module_name]
 
-        try:
-            # Mock the Lambda event for the local kag_worker
+        spec = importlib.util.spec_from_file_location(module_name, path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        
+        return module
+
+    def trigger_kag_ingestion(self, base_path, folder_name="Email", limit=3):
+        print("🚀🚀🚀 CANARY: THE NEW BRIDGE IS RUNNING 🚀🚀🚀") # <--- Add t
+        """
+        🚀 FLASK DISPATCHER:
+        Sends Kaggle samples to the dedicated worker API.
+        """
+       
+        samples = get_prepared_kag_batch(base_path, folder_name=folder_name, limit=limit)
+        sample_ids = []
+
+        print(f"\n📡 [BRIDGE]: Dispatching {len(samples)} samples to Flask Worker...")
+
+        for sample in samples:
             payload = {
-                "base_path": base_path,
-                "folder": folder_name,
-                "limit": limit,
-                "is_local": True
+                "feedback_id": sample['feedback_id'],
+                "file_path": sample.get('file_path'),
+                "folder": folder_name
             }
-            # Execute the handler logic locally
-            return worker.lambda_handler(payload, None)
-        except Exception as e:
-            print(f"❌ Local KAG Ingestion Failed: {e}")
-            return {"status": "error", "message": str(e)}
 
-    def trigger_dataset_ingestion(self, payload):
-        """Direct entry point for MNIST baseline test."""
-        print(f"🌉 Bridge: Routing to MNIST Ingestor...")
-        worker = self.workers.get("mnist_ingestor")
-        
-        if not worker:
-            return {"status": "error", "message": "MNIST worker is not available."}
+            try:
+                # 🎯 THE BLOCKING CALL: Flask won't respond until the AI is finished
+                resp = requests.post("http://localhost:5001/process-kag", json=payload, timeout=60)
+                
+                if resp.status_code == 200:
+                    sample_ids.append(sample['feedback_id'])
+                    print(f"✅ [DISPATCHED]: {sample['feedback_id']}")
+            except Exception as e:
+                print(f"❌ [FLASK-COMM-ERROR]: {e}")
 
-        try:
-            return worker.lambda_handler(payload, None)
-        except Exception as e:
-            return {"status": "error", "message": str(e)}
+        return {
+            "status": "COMPLETE",
+            "sample_ids": sample_ids
+        }
 
     def trigger_pipeline(self, data, file=None):
         """Standard feedback processing logic."""
@@ -114,4 +117,22 @@ class LocalPipelineBridge(IPipelineBridge):
                 }
             }
         return {"status": "error", "message": "Summary worker not loaded."}
+
+    def _persist_data(self, payload, raw_text, ai_response, user_id, feedback_id, audio_path):
+        table = self.persistence.summary_service.repo.table
+        try:
+            table.put_item(Item={
+                'feedback_id': feedback_id,
+                'user_id': user_id,
+                'status': 'COMPLETED',  # 🎯 SET TO COMPLETED HERE
+                'raw_text': raw_text,
+                'summary': ai_response,
+                'audio_path': audio_path,
+                'timestamp': str(time.time()),
+                'category': payload.get('category', 'Kaggle'),
+                'master': '✅ Local Pipeline Finished'
+            })
+            return True
+        except Exception:
+            return False
     

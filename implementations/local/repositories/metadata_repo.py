@@ -3,7 +3,7 @@ from chalicelib.models import MetadataModel
 class LocalMetadataRepository(BaseDynamoRepository):
     def __init__(self, db_resource, logger=None):
         # Change "Metadata" to "Feedback_Metadata"
-        super().__init__("Feedback_Metadata", db_resource, logger)
+        super().__init__("Metadata", db_resource, logger)
 
     def save_metadata(self, metadata):
         """

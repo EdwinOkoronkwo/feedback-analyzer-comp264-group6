@@ -33,36 +33,38 @@ class AnalyzerUI:
             final_data = None
 
             # 4. Use the dynamic spinner text
+            # 7. Routing Logic inside AnalyzerUI.render
             with st.spinner(spinner_text):
-                for progress, info in pipeline.run(payload):
-                    # If info is a string, it's a progress update
+                for progress, info in pipeline.trigger_pipeline(payload):
                     if isinstance(info, str):
                         status_text.markdown(f"**Status:** {info}")
-                        progress_bar.progress(progress)
-                    # If info is a dict, it's the actual result
-                                        # Inside AnalyzerUI.render
+                        progress_bar.progress(min(progress, 1.0))
                     elif isinstance(info, dict):
                         final_data = info 
                         
-                        # 💡 THE UNIVERSAL UNWRAPPER
-                        # If AWS gave us a nested 'summary' object, we peek inside it.
-                        # If Local gave us a flat dict, we use it as is.
+                        # Extract data regardless of nesting
                         display_data = info.get("summary") if isinstance(info.get("summary"), dict) else info
                         
                         with tracker_container.container():
                             self.tracker.render(display_data)
                         with terminal_container.container():
                             self.terminal.render(display_data)
-            if final_data and final_data.get("status") == "COMPLETE":
-                status_text.success("✅ Analysis Complete!")
-                progress_bar.progress(1.0)
-                # Render the final results box
-                self.results.render(final_data)
-            else:
-                # This triggers if the loop finishes but status isn't 'COMPLETE'
-                st.error(f"❌ Pipeline failed or returned incomplete data.")
-                if final_data:
-                    st.write("Debug info:", final_data) # See what actually cam
+
+            # 🎯 THE FIX: A more robust completion check
+            # We consider it "Finished" if we have a summary OR a success status.
+            if final_data:
+                # Check for various success indicators
+                has_summary = "summary" in final_data or (isinstance(final_data.get("summary"), str))
+                is_complete = final_data.get("status") in ["COMPLETE", "SUMMARIZED", "SUCCESS"]
+                
+                if has_summary or is_complete:
+                    status_text.success("✅ Analysis Complete!")
+                    progress_bar.progress(1.0)
+                    self.results.render(final_data)
+                else:
+                    st.warning(f"⚠️ Pipeline reached end of loop with status: {final_data.get('status', 'UNKNOWN')}")
+                    with st.expander("Inspect Raw Response"):
+                        st.json(final_data)
 
 class LogTerminal:
     """Renders a code-block style terminal showing AWS event timestamps"""
@@ -70,21 +72,23 @@ class LogTerminal:
         st.write("---")
         st.caption("🖥️ AWS CloudWatch Event Stream")
         
-        # Mapping DB keys to human-readable log messages
+        # 🎯 Updated to match the keys found in your 'Analysis_Summaries' poll
         log_map = [
-            ("timestamp", "INIT", "Pipeline record created in DynamoDB"),
-            ("master", "MASTER", "S3 Event triggered Orchestrator"),
-            ("text", "INPUT", "Data payload extracted and validated"),
-            ("sentiment", "ANALYSIS", "Comprehend/Mistral processing started"),
+            ("feedback_id", "INIT", "Pipeline record created in DynamoDB"),
+            ("status", "MASTER", "S3 Event triggered Orchestrator"),
+            ("translated_text", "INPUT", "Data payload extracted and validated"),
+            ("sentiment", "ANALYSIS", "AI processing started"),
             ("summary", "AI_GEN", "Summary generated and saved"),
             ("audio_path", "POLY", "Speech synthesis complete")
         ]
         
         terminal_lines = []
         for key, tag, msg in log_map:
-            if key in db_row and db_row[key] not in [None, "N/A"]:
-                # Use the current time or the DB timestamp if you have it
-                ts = db_row.get('timestamp', '00:00:00')[-8:] # Show last few digits of TS
+            # Check if key exists and has a valid value
+            if key in db_row and db_row[key] not in [None, "N/A", ""]:
+                # Extract time from timestamp if available, else default
+                raw_ts = str(db_row.get('timestamp', '00:00:00'))
+                ts = raw_ts[-8:] 
                 terminal_lines.append(f"[{ts}] [{tag}] {msg} ... ✅")
         
         # Render as a dark terminal block
@@ -98,14 +102,13 @@ class AnalysisForm:
         # 1. 🎛️ SIDEBAR MODE SWITCH
         with st.sidebar:
             st.header("⚙️ System Settings")
-            # This radio button replaces the need for 'export ENV_MODE'
             app_mode = st.radio(
                 "Execution Environment",
                 options=["LOCAL", "AWS"],
                 help="LOCAL: Uses VMware Tesseract/Disk. AWS: Uses S3/Lambda/DynamoDB.",
                 index=0 if os.getenv("ENV_MODE", "LOCAL") == "LOCAL" else 1
             )
-            # Update the environment variable dynamically for the rest of the session
+            # Update the environment variable dynamically
             os.environ["ENV_MODE"] = app_mode
             
             st.divider()
@@ -118,7 +121,7 @@ class AnalysisForm:
             UPLOAD_DIR = "temp_uploads"
             os.makedirs(UPLOAD_DIR, exist_ok=True)
             
-            # 2. Dynamic Info Header
+            # Mode Indicator
             if app_mode == "LOCAL":
                 st.info("📂 Mode: **LOCAL** (Tesseract OCR + Local Storage)")
             else:
@@ -135,6 +138,7 @@ class AnalysisForm:
                     st.error("⚠️ Please provide text or an image.")
                     return None
 
+                # 1. Generate the Unique ID (The Partition Key)
                 user_id = getattr(user, 'username', 'anonymous')
                 unique_id = f"{user_id}_{uuid.uuid4().hex[:8]}"
                 
@@ -142,24 +146,90 @@ class AnalysisForm:
                     "feedback_id": unique_id,
                     "text": text_input,
                     "user_id": user_id,
+                    "status": "PROCESSING",
                     "source_type": "TEXT",
                     "file_path": None,
                     "image_data": None
                 }
                 
                 if uploaded_file:
+                    # 🎯 THE FIX: Force the filename to match the unique_id
+                    # This ensures the Lambda's 'fid' matches the DB 'feedback_id'
+                    extension = uploaded_file.name.split('.')[-1]
+                    consistent_filename = f"{unique_id}.{extension}"
+                    
                     file_bytes = uploaded_file.getvalue()
-                    file_path = os.path.join(UPLOAD_DIR, uploaded_file.name)
+                    file_path = os.path.join(UPLOAD_DIR, consistent_filename)
                     
                     with open(file_path, "wb") as f:
                         f.write(file_bytes)
                     
                     payload["source_type"] = "IMAGE"
                     payload["file_path"] = os.path.abspath(file_path)
-                    payload["image_data"] = {"name": uploaded_file.name, "bytes": file_bytes}
+                    payload["image_data"] = {
+                        "name": consistent_filename, # Lambda uses this for 'fid'
+                        "bytes": file_bytes
+                    }
                     
                 return payload
         return None
+
+        # with st.container(border=True):
+        #     UPLOAD_DIR = "temp_uploads"
+        #     os.makedirs(UPLOAD_DIR, exist_ok=True)
+            
+        #     # 2. Dynamic Info Header
+        #     if app_mode == "LOCAL":
+        #         st.info("📂 Mode: **LOCAL** (Tesseract OCR + Local Storage)")
+        #     else:
+        #         st.info("📡 Mode: **AWS** (S3 Trigger + Lambda Orchestration)")
+            
+        #     text_input = st.text_area("Feedback Text", placeholder="Describe the feedback...")
+        #     uploaded_file = st.file_uploader("📸 Image", type=['jpg', 'png', 'jpeg'])
+            
+        #     # 🎯 FIX: Changed width=None to use_container_width=True
+        #     if uploaded_file:
+        #         st.image(
+        #             uploaded_file, 
+        #             caption=f"File: {uploaded_file.name}", 
+        #             width="stretch"
+        #         )
+
+        #     if st.button("🚀 Run Analysis Pipeline", width="stretch"):
+        #         if not text_input.strip() and not uploaded_file:
+        #             st.error("⚠️ Please provide text or an image.")
+        #             return None
+
+        #         # Extract username from user object or default to anonymous
+        #         user_id = getattr(user, 'username', 'anonymous')
+        #         unique_id = f"{user_id}_{uuid.uuid4().hex[:8]}"
+                
+        #         payload = {
+        #             "feedback_id": unique_id,
+        #             "text": text_input,
+        #             "user_id": user_id,
+        #             "status": "PROCESSING", # Explicitly set initial status
+        #             "source_type": "TEXT",
+        #             "file_path": None,
+        #             "image_data": None
+        #         }
+                
+        #         if uploaded_file:
+        #             file_bytes = uploaded_file.getvalue()
+        #             file_path = os.path.join(UPLOAD_DIR, uploaded_file.name)
+                    
+        #             with open(file_path, "wb") as f:
+        #                 f.write(file_bytes)
+                    
+        #             payload["source_type"] = "IMAGE"
+        #             payload["file_path"] = os.path.abspath(file_path)
+        #             payload["image_data"] = {
+        #                 "name": uploaded_file.name, 
+        #                 "bytes": file_bytes
+        #             }
+                    
+        #         return payload
+        # return None
 
 class PipelineTracker:
     def render(self, db_row):

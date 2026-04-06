@@ -86,3 +86,10 @@ class LocalPipelineFactory:
         
         # 2. Return (Provider, None) to satisfy the 'analytics, _' unpacking in app.py
         return provider, None
+
+    
+    @staticmethod
+    def get_summaries_layer():
+        db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
+        logger = FileAuditLogger(name="Local-Summary-Provider")
+        return SummaryService(LocalSummaryRepository(db, logger))
