@@ -1,4 +1,3 @@
-
 import streamlit as st
 import time
 import pandas as pd
@@ -9,21 +8,21 @@ class BatchResultCard:
     """Renders a single document's analysis result in the batch grid with Speech & OCR support"""
     @staticmethod
     def render(fid, data):
-        # Handle nesting: data is the merged dict from Summaries + Metadata
+        # 1. THE FLEXIBLE GETTER (Matching ResultsDisplay logic)
+        # Handles nested AWS response or flat Local response
         db_row = data.get("summary") if isinstance(data.get("summary"), dict) else data
         
-        # 1. Normalize status
+        # 2. Normalize status
         raw_status = str(db_row.get('status', 'PENDING')).upper()
-        status = "COMPLETED" if raw_status in ["COMPLETE", "COMPLETED", "SUMMARIZED"] else raw_status
+        status = "COMPLETED" if raw_status in ["COMPLETE", "COMPLETED", "SUMMARIZED", "SUCCESS"] else raw_status
         
-        # 2. Extract Fields
-        ds_type = st.session_state.get('active_dataset_type', 'Dataset')
+        # 3. Extract Fields
+        ds_type = st.session_state.get('active_dataset_type', 'Kaggle Tobacco')
         sentiment = db_row.get('sentiment')
-        summary = db_row.get('summary') or db_row.get('content', 'Processing...')
+        summary = db_row.get('summary') or db_row.get('content') or db_row.get('translated_text', 'Processing...')
         
-        # 🎯 Metadata Fields (from Tesseract & gTTS)
-        audio_path = db_row.get('audio_path')
-        # Tesseract saves to 'text', 'text_content', or 'translated_text' depending on handler
+        # 🎯 Metadata Fields (OCR and Audio)
+        audio_path = db_row.get('audio_path') or data.get('audio_path')
         raw_ocr = db_row.get('text') or db_row.get('text_content') or db_row.get('translated_text')
 
         with st.expander(f"📄 {fid} | {status}", expanded=(status == "COMPLETED")):
@@ -35,11 +34,30 @@ class BatchResultCard:
                 else:
                     st.metric("Source", ds_type)
                 
-                # 🎙️ AUDIO PLAYER (Matching AWS/AnalyzerUI functionality)
-                if audio_path and os.path.exists(audio_path):
-                    st.audio(audio_path)
+                # 🎙️ CLEAN AUDIO PLAYER LOGIC
+                if audio_path:
+                    # Case A: Remote URL (S3 Presigned/HTTP)
+                    if str(audio_path).startswith(("http://", "https://")):
+                        st.audio(audio_path)
+                    
+                    # Case B: Local file path (VMware/Local mode)
+                    elif os.path.exists(str(audio_path)):
+                        try:
+                            with open(audio_path, "rb") as audio_file:
+                                st.audio(audio_file.read(), format="audio/mp3")
+                        except Exception as e:
+                            st.error("Audio Read Error")
+                    
+                    # Case C: Processing state
+                    else:
+                        if status == "COMPLETED":
+                            st.warning("🎙️ Audio unreachable")
+                        else:
+                            st.info("🎙️ Finalizing audio...")
                 elif status == "COMPLETED":
-                    st.caption("🎙️ Generating audio...")
+                    st.caption("No audio generated.")
+                else:
+                    st.caption("🎙️ Waiting for pipeline...")
             
             with col2:
                 label = "AI Summary" if ds_type == "Kaggle Tobacco" else "Model Analysis"
@@ -50,12 +68,9 @@ class BatchResultCard:
                 else:
                     st.info("⌛ Analysis in progress...")
                 
-                # 📄 RAW OCR TEXT SECTION
-                if st.checkbox("View Raw OCR Text", key=f"raw_{fid}"):
-                    if raw_ocr:
-                        st.text_area("Extracted by Tesseract", raw_ocr, height=150, key=f"txt_{fid}")
-                    else:
-                        st.warning("No raw text extracted yet.")
+                # Secondary content (OCR)
+                if st.checkbox("View Raw OCR Text", key=f"raw_check_{fid}"):
+                    st.text_area("Extracted Text", raw_ocr or "No text found", height=150, key=f"txt_area_{fid}")
 
 class BatchTracker:
     def __init__(self, bridge):
@@ -106,7 +121,7 @@ class BatchTracker:
             time.sleep(3) 
             st.rerun()
         else:
-            st.balloons()
+            # Removed balloons as requested
             st.success("✅ Batch Research Analysis Complete!")
             
 class DatasetUI:
@@ -114,30 +129,22 @@ class DatasetUI:
         self.terminal = LogTerminal()
 
     def render(self, bridge, user):
-        st.header("🗂️ Dataset Ingestion Hub")
+        # Renamed header as requested
+        st.header("🗂️ Kaggle Tobacco Dataset Ingestion")
         
         # --- 1. Selection UI ---
-        dataset_type = st.radio(
-            "Select Target Dataset", 
-            ["Kaggle Tobacco", "MNIST Digits"], 
-            horizontal=True,
-            key="ds_selector"
-        )
+        # Removed radio button and MNIST selection
+        dataset_type = "Kaggle Tobacco"
+        st.info(f"Active Dataset: **{dataset_type}**")
         
         col1, col2 = st.columns(2)
         with col1:
-            if dataset_type == "Kaggle Tobacco":
-                category = st.selectbox("Document Category", ["Email", "Memo", "Letter", "Report"])
-                base_path = "data/kag_reviews/dataset" 
-            else:
-                category = st.selectbox("Digit Class (Label)", [str(i) for i in range(10)])
-                base_path = None 
+            category = st.selectbox("Document Category", ["Email", "Memo", "Letter", "Report"])
+            base_path = "data/kag_reviews/dataset" 
         
         with col2:
             limit = st.number_input("Batch Size", 1, 10, 3)
 
-        # --- 2. Trigger Logic ---
-        # --- 2. Trigger Logic ---
         # --- 2. Trigger Logic ---
         if st.button("🚀 Trigger & Monitor Batch", use_container_width=True):
             with st.spinner("Executing Local Pipeline & Polling Workers..."):
@@ -165,6 +172,7 @@ class DatasetUI:
 
                 except Exception as e:
                     st.error(f"Bridge Communication Failed: {str(e)}")
+
         # --- 3. Live Results Display ---
         # If a batch is active in the session, show the Tracker
         if 'current_batch' in st.session_state:

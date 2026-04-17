@@ -79,10 +79,10 @@ if st.session_state.get('authenticated'):
     st.sidebar.info(f"Mode: {mode_label}")
     
     # Add "Dataset Ingestion" to the navigation
-    nav_options = ["New Analysis", "Dataset Ingestion", "My History"]
+    nav_options = ["New Analysis", "Dataset Ingestion"]
     
     if getattr(user, 'role', 'user') == "admin":
-        nav_options.extend(["Analytics Dashboard", "System Admin"])
+        nav_options.extend(["Analytics Dashboard"])
         
     if st.sidebar.button("Logout"):
         st.session_state.clear()
@@ -98,8 +98,6 @@ if st.session_state.get('authenticated'):
         # Render the new Kaggle/MNIST UI
         DatasetUI().render(st.session_state.bridge, user)
         
-    # elif choice == "My History":
-    #     HistoryUI().render(st.session_state.bridge, user)
 
     elif choice == "Analytics Dashboard":
         # Pass BOTH providers to the view
@@ -108,5 +106,3 @@ if st.session_state.get('authenticated'):
             summaries_provider=st.session_state.summaries_provider
         )
         
-    # elif choice == "System Admin":
-    #     AdminUI().render(st.session_state.user_service)

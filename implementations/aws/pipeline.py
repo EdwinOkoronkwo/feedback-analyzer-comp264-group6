@@ -129,74 +129,7 @@ class FeedbackAnalysisPipeline:
 
     
 
-    
-    # def trigger_kag_ingestion(self, base_path, folder_name="Email", limit=5):
-    #     """🚀 AWS-Ready Batch Orchestrator using the reliable S3-Trigger logic"""
-    #     # 1. Get the samples
-    #     samples = get_prepared_kag_batch(base_path, folder_name=folder_name, limit=limit)
-    #     sample_ids = []
-    #     table = self.dynamodb.Table("Analysis_Summaries")
-
-    #     print(f"📊 [ORCHESTRATOR]: Processing {len(samples)} AWS samples...")
-
-    #     # 2. Seed & Upload Loop (The working logic you sent)
-    #     for sample in samples:
-    #         fid = sample['feedback_id']
-    #         sample_ids.append(fid)
-    #         file_path = sample.get('file_path')
-            
-    #         # --- SEED DYNAMO ---
-    #         table.put_item(Item={
-    #             'feedback_id': fid,
-    #             'user_id': 'admin',
-    #             'status': 'PROCESSING',
-    #             'timestamp': str(time.time()),
-    #             'master': '✅ AWS Orchestrator Initialized'
-    #         })
-
-    #         # --- UPLOAD TO S3 (Triggers the Cloud Worker) ---
-    #         if file_path and os.path.exists(file_path):
-    #             with open(file_path, 'rb') as f:
-    #                 body = f.read()
-                
-    #             ext = file_path.split('.')[-1]
-    #             file_key = f"uploads/{fid}.{ext}"
-                
-    #             # CRITICAL: This Metadata is what makes the Cloud Worker work!
-    #             self.s3_client.put_object(
-    #                 Bucket=self.bucket,
-    #                 Key=file_key,
-    #                 Body=body,
-    #                 Metadata={"feedback_id": fid}
-    #             )
-    #             print(f"📤 [TRACE] Uploaded {fid} to S3 bucket {self.bucket}")
-
-    #     # 3. Polling Loop (Watching all IDs in the batch)
-    #     print("📡 [ORCHESTRATOR]: Polling AWS for batch results...")
-    #     for i in range(60):
-    #         time.sleep(2.0)
-    #         completed_count = 0
-            
-    #         for fid in sample_ids:
-    #             res = table.get_item(Key={'feedback_id': fid})
-    #             data = res.get('Item', {})
-    #             db_status = str(data.get('status', '')).upper()
-                
-    #             # Check for completion markers
-    #             if db_status in ['COMPLETE', 'COMPLETED', 'SUCCESS'] or data.get('summary'):
-    #                 completed_count += 1
-            
-    #         print(f"🔍 [POLL {i}] Status: {completed_count}/{len(sample_ids)} finished...")
-            
-    #         if completed_count == len(sample_ids):
-    #             break
-
-    #     # 4. Return to UI (Matches your DatasetUI keys)
-    #     return {
-    #         "status": "COMPLETE",
-    #         "ids": sample_ids,
-    #         "message": f"Successfully processed {len(sample_ids)} items on AWS."
-    #     }
+ 
 
     def trigger_pipeline(self, raw_input: dict):
         """🚀 AWS Cloud Single Processing Path"""
@@ -341,6 +274,76 @@ class FeedbackAnalysisPipeline:
             # Log specifically so we can see if it's still failing
             self.logger.log_event("DB_POLLING", "ERROR", f"Polling {actual_table} failed: {e}")
             return None
+
+
+       
+    # def trigger_kag_ingestion(self, base_path, folder_name="Email", limit=5):
+    #     """🚀 AWS-Ready Batch Orchestrator using the reliable S3-Trigger logic"""
+    #     # 1. Get the samples
+    #     samples = get_prepared_kag_batch(base_path, folder_name=folder_name, limit=limit)
+    #     sample_ids = []
+    #     table = self.dynamodb.Table("Analysis_Summaries")
+
+    #     print(f"📊 [ORCHESTRATOR]: Processing {len(samples)} AWS samples...")
+
+    #     # 2. Seed & Upload Loop (The working logic you sent)
+    #     for sample in samples:
+    #         fid = sample['feedback_id']
+    #         sample_ids.append(fid)
+    #         file_path = sample.get('file_path')
+            
+    #         # --- SEED DYNAMO ---
+    #         table.put_item(Item={
+    #             'feedback_id': fid,
+    #             'user_id': 'admin',
+    #             'status': 'PROCESSING',
+    #             'timestamp': str(time.time()),
+    #             'master': '✅ AWS Orchestrator Initialized'
+    #         })
+
+    #         # --- UPLOAD TO S3 (Triggers the Cloud Worker) ---
+    #         if file_path and os.path.exists(file_path):
+    #             with open(file_path, 'rb') as f:
+    #                 body = f.read()
+                
+    #             ext = file_path.split('.')[-1]
+    #             file_key = f"uploads/{fid}.{ext}"
+                
+    #             # CRITICAL: This Metadata is what makes the Cloud Worker work!
+    #             self.s3_client.put_object(
+    #                 Bucket=self.bucket,
+    #                 Key=file_key,
+    #                 Body=body,
+    #                 Metadata={"feedback_id": fid}
+    #             )
+    #             print(f"📤 [TRACE] Uploaded {fid} to S3 bucket {self.bucket}")
+
+    #     # 3. Polling Loop (Watching all IDs in the batch)
+    #     print("📡 [ORCHESTRATOR]: Polling AWS for batch results...")
+    #     for i in range(60):
+    #         time.sleep(2.0)
+    #         completed_count = 0
+            
+    #         for fid in sample_ids:
+    #             res = table.get_item(Key={'feedback_id': fid})
+    #             data = res.get('Item', {})
+    #             db_status = str(data.get('status', '')).upper()
+                
+    #             # Check for completion markers
+    #             if db_status in ['COMPLETE', 'COMPLETED', 'SUCCESS'] or data.get('summary'):
+    #                 completed_count += 1
+            
+    #         print(f"🔍 [POLL {i}] Status: {completed_count}/{len(sample_ids)} finished...")
+            
+    #         if completed_count == len(sample_ids):
+    #             break
+
+    #     # 4. Return to UI (Matches your DatasetUI keys)
+    #     return {
+    #         "status": "COMPLETE",
+    #         "ids": sample_ids,
+    #         "message": f"Successfully processed {len(sample_ids)} items on AWS."
+    #     }
 
     # def _get_table_data(self, table_name, feedback_id):
     #     """Fetches a record by feedback_id HASH key."""

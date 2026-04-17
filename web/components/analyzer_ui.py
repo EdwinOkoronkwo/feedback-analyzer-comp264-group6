@@ -174,63 +174,6 @@ class AnalysisForm:
                 return payload
         return None
 
-        # with st.container(border=True):
-        #     UPLOAD_DIR = "temp_uploads"
-        #     os.makedirs(UPLOAD_DIR, exist_ok=True)
-            
-        #     # 2. Dynamic Info Header
-        #     if app_mode == "LOCAL":
-        #         st.info("📂 Mode: **LOCAL** (Tesseract OCR + Local Storage)")
-        #     else:
-        #         st.info("📡 Mode: **AWS** (S3 Trigger + Lambda Orchestration)")
-            
-        #     text_input = st.text_area("Feedback Text", placeholder="Describe the feedback...")
-        #     uploaded_file = st.file_uploader("📸 Image", type=['jpg', 'png', 'jpeg'])
-            
-        #     # 🎯 FIX: Changed width=None to use_container_width=True
-        #     if uploaded_file:
-        #         st.image(
-        #             uploaded_file, 
-        #             caption=f"File: {uploaded_file.name}", 
-        #             width="stretch"
-        #         )
-
-        #     if st.button("🚀 Run Analysis Pipeline", width="stretch"):
-        #         if not text_input.strip() and not uploaded_file:
-        #             st.error("⚠️ Please provide text or an image.")
-        #             return None
-
-        #         # Extract username from user object or default to anonymous
-        #         user_id = getattr(user, 'username', 'anonymous')
-        #         unique_id = f"{user_id}_{uuid.uuid4().hex[:8]}"
-                
-        #         payload = {
-        #             "feedback_id": unique_id,
-        #             "text": text_input,
-        #             "user_id": user_id,
-        #             "status": "PROCESSING", # Explicitly set initial status
-        #             "source_type": "TEXT",
-        #             "file_path": None,
-        #             "image_data": None
-        #         }
-                
-        #         if uploaded_file:
-        #             file_bytes = uploaded_file.getvalue()
-        #             file_path = os.path.join(UPLOAD_DIR, uploaded_file.name)
-                    
-        #             with open(file_path, "wb") as f:
-        #                 f.write(file_bytes)
-                    
-        #             payload["source_type"] = "IMAGE"
-        #             payload["file_path"] = os.path.abspath(file_path)
-        #             payload["image_data"] = {
-        #                 "name": uploaded_file.name, 
-        #                 "bytes": file_bytes
-        #             }
-                    
-        #         return payload
-        # return None
-
 class PipelineTracker:
     def render(self, db_row):
         st.write("### 📡 Live Pipeline Status")
