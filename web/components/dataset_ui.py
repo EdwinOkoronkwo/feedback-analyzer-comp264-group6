@@ -121,19 +121,17 @@ class BatchTracker:
             time.sleep(3) 
             st.rerun()
         else:
-            # Removed balloons as requested
             st.success("✅ Batch Research Analysis Complete!")
             
 class DatasetUI:
     def __init__(self):
-        self.terminal = LogTerminal()
+        # Note: LogTerminal assumed to be available in runtime
+        pass
 
     def render(self, bridge, user):
-        # Renamed header as requested
         st.header("🗂️ Kaggle Tobacco Dataset Ingestion")
         
         # --- 1. Selection UI ---
-        # Removed radio button and MNIST selection
         dataset_type = "Kaggle Tobacco"
         st.info(f"Active Dataset: **{dataset_type}**")
         
@@ -143,7 +141,24 @@ class DatasetUI:
             base_path = "data/kag_reviews/dataset" 
         
         with col2:
-            limit = st.number_input("Batch Size", 1, 10, 3)
+            # Enforcing min 1 and max 10 directly in the widget.
+            # This prevents the internal state from ever exceeding 10.
+            limit = st.number_input(
+                "Batch Size", 
+                min_value=1, 
+                max_value=10,
+                value=3,
+                help="Limits the concurrent documents processed to prevent local resource exhaustion (Max 10)."
+            )
+            
+            # Since the widget stops at 10, we show a hint when it reaches that peak
+            # to explain why they cannot go further.
+            if limit >= 10:
+                st.info("💡 Maximum batch size of 10 reached.")
+            
+            # Final safety enforcement
+            limit = max(1, min(limit, 10))
+
 
         # --- 2. Trigger Logic ---
         if st.button("🚀 Trigger & Monitor Batch", use_container_width=True):
@@ -174,7 +189,6 @@ class DatasetUI:
                     st.error(f"Bridge Communication Failed: {str(e)}")
 
         # --- 3. Live Results Display ---
-        # If a batch is active in the session, show the Tracker
         if 'current_batch' in st.session_state:
             st.divider()
             tracker = BatchTracker(bridge)
@@ -183,7 +197,6 @@ class DatasetUI:
             if st.button("🗑️ Clear Batch Results", use_container_width=True):
                 del st.session_state.current_batch
                 st.rerun()
-
 
 
 # import streamlit as st
